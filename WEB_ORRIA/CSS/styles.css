@@ -2,6 +2,18 @@ body {
 
     margin: 0;
     padding: 0;
+
+
+}
+
+/*Header atalaren estiloa*/
+
+header {
+
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #ffffff;
+
 }
 
 
@@ -12,8 +24,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #f2f2f2;
+    background-color: #e3dc95;
+    border-radius: 30px;
+}
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 /*Nabigazio menuaren ul-ri lista formatua kentzen*/
@@ -30,13 +48,11 @@ body {
 .nabigazioa ul li a {
 
     text-decoration: none;
-    color: #333;
+    color: #000000;
     font-weight: bold;
     font-family: 'Quicksand', sans-serif;
     font-size: 20px;
 }
-
-/*Nabigazio menuaren orrien estekei estiloa aldatzen*/
 
 
 
@@ -56,4 +72,37 @@ body {
     width: 50px;
     height: auto;
 
+}
+
+/*Saskiaren zenbaketaren estiloa*/
+
+.carritoLogo span {
+
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    color: #000000;
+
+    text-decoration: none;
+}
+
+/*Login botoiaren estiloa*/
+
+.loginBtn {
+
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    border: none;
+    background-color: #a6a867;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.loginBtn a {
+
+    text-decoration: none;
+    color: rgb(0, 0, 0);
 }

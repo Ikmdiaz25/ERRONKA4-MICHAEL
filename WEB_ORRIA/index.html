@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="eu">
+
+<head>
+    <title>INDIUSURBIL</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="MUPI taldea">
+    <meta name="description" content="Hau INDIUSURBIL produktuen orrialdea da">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/produktuak.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/index.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu,close">
+</head>
+
+<body>
+    <header>
+        <nav class="nabigazioa">
+            <div class="logo">
+                <a href="index.html"><img src="img/logo.png" alt="IndiUsurbileko Logoa"></a>
+            </div>
+            <ul>
+                <li><a href="index.html">Orrialde Nagusia</a></li>
+                <li><a href="produktuak.html">Produktuak</a></li>
+                <li><a href="saskia.html">Saskia</a></li>
+                <li><a href="estadistikak.html">Estadistikak</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="loginBtn"><a href="login.html">Login</a></button>
+                <div class="carritoLogo">
+                    <a href="saskia.html"><img src="IMG/carro.png" alt="Saskia"><span id="zenbaketa">0</span></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Carousel -->
+        <section class="hero-carousel">
+            <div class="carousel-track">
+                <!-- Slide 1 -->
+                <div class="carousel-slide current-slide">
+                    <img src="IMG/hero1.png" alt="Hero Image 1"
+                        onerror="this.style.display='none';this.parentElement.style.backgroundColor='#e3dc95'">
+                    <div class="carousel-overlay">
+                        <h2>Bilduma Berria</h2>
+                        <p>Ezagutu gure arropa jasangarria</p>
+                        <a href="produktuak.html" class="carousel-btn">Ikusi Gehiago</a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <img src="IMG/hero2.png" alt="Hero Image 2"
+                        onerror="this.style.display='none';this.parentElement.style.backgroundColor='#a6a867'">
+                    <div class="carousel-overlay">
+                        <h2>Udazkena & Negua</h2>
+                        <p>Jantzi eroso eta modernoak</p>
+                        <a href="produktuak.html" class="carousel-btn">Erosi Orain</a>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <img src="IMG/hero3.png" alt="Hero Image 3"
+                        onerror="this.style.display='none';this.parentElement.style.backgroundColor='#294936'">
+                    <div class="carousel-overlay">
+                        <h2>Estilo Bakarra</h2>
+                        <p>Zuretzat pentsatua</p>
+                        <a href="produktuak.html" class="carousel-btn">Ezagutu</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-nav">
+                <button class="nav-btn prev-btn">&#10094;</button>
+                <button class="nav-btn next-btn">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Info Banner -->
+        <section class="info-banner">
+            <p>Bidalketa doan mundu guztira &bull; Kalitate gorena &bull; Diseinu jasangarria</p>
+        </section>
+
+        <!-- Featured Section -->
+        <section class="featured-section">
+            <h2>Gure Aukeraketan</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="IMG/KamisetaTxuria.png" alt="Kamisetak">
+                    <div class="grid-content">
+                        <h3>Kamisetak</h3>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="IMG/Jertsea.png" alt="Jertseak">
+                    <div class="grid-content">
+                        <h3>Jertseak</h3>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="IMG/Galtzak.png" alt="Galtzak">
+                    <div class="grid-content">
+                        <h3>Galtzak</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscribe -->
+        <section class="subscribe-section">
+            <h2>Harpidetu gure buletinera</h2>
+            <p>Jaso eskaintza eta berritasun guztiak zure e-postan</p>
+            <form class="subscribe-form" onsubmit="event.preventDefault(); alert('Eskerrik asko harpidetzeagatik!');">
+                <input type="email" placeholder="Zure e-posta...">
+                <button type="submit">Harpidetu</button>
+            </form>
+        </section>
+
+    </main>
+    <script src="js/main.js"></script>
+    <footer>
+        <div id="footer1">
+            <div class="footer-column">
+                <h3>Laguntza</h3>
+                <ul>
+                    <li><a href="tel:926492739">Tel: 926492739</a></li>
+                    <li><a href="https://wa.me/926492739">Whatsapp</a></li>
+                    <li><a href="mailto:info@indiusurbil.com">Kontaktua</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Informazioa</h3>
+                <ul>
+                    <li><a href="#">Pribazitate politika</a></li>
+                    <li><a href="#">Cookie politika</a></li>
+                    <li><a href="#">Termino eta kondizioak</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Aurkitu Gaitzazu</h3>
+                <ul>
+                    <li>IndiUsurbil</li>
+                    <li>Kale Nagusia 12</li>
+                    <li>20170 Usurbil</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="footer2">
+            <p>&copy; 2025 IndiUsurbil - Eskubide guztiak erreserbatuta.</p>
+            <div class="saresozialak">
+                <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="img/linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
+    </footer>
+</body>
