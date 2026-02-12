@@ -1,0 +1,120 @@
+.estatistikak-sekzioa {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+}
+
+.estatistikak-sekzioa h1 {
+    font-size: 2.5rem;
+    color: #294936;
+    margin-bottom: 10px;
+}
+
+.deskribapena {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.estatistika-edukiontzia {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.estatistika-txartela {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.estatistika-txartela:hover {
+    transform: translateY(-5px);
+}
+
+.estatistika-txartela h3 {
+    color: #a50104;
+    margin-top: 0;
+}
+
+.zenbakia {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #294936;
+    margin: 10px 0;
+}
+
+.grafiko-sinplea {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+}
+
+.barra-edukiontzia {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 300px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.barra {
+    width: 10%;
+    background-color: #a6a867;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    transition: height 1s ease-in-out;
+}
+
+.barra:hover {
+    background-color: #e3dc95;
+}
+
+.barra span {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .estatistika-edukiontzia {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .barra-edukiontzia {
+        height: 200px;
+    }
+
+    .estatistikak-sekzioa h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .estatistika-txartela {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .barra span {
+        font-size: 0.8rem;
+    }
+}
