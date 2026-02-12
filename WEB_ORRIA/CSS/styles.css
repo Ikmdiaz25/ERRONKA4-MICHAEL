@@ -175,10 +175,12 @@ dialog#menu-leihoa {
 
 .menu-estekak li a {
     text-decoration: none;
-    color: #000;
+    color: #000 !important;
     font-family: 'Quicksand', sans-serif;
     font-size: 2rem;
     font-weight: bold;
+    display: block !important;
+    opacity: 1 !important;
 }
 
 
