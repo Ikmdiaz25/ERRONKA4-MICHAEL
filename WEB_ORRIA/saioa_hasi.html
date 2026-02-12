@@ -2,14 +2,14 @@
 <html lang="eu">
 
 <head>
-    <title>INDIUSURBIL - Estatistikak</title>
+    <title>INDIUSURBIL - Saioa Hasi</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="MUPI taldea">
-    <meta name="description" content="IndiUsurbil estatistika orrialdea">
+    <meta name="description" content="IndiUsurbil saioa hasteko orrialdea">
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/footer.css">
-    <link rel="stylesheet" href="CSS/estatistikak.css">
+    <link rel="stylesheet" href="CSS/saioa_hasi.css">
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu,close" />
@@ -28,7 +28,7 @@
                 <li><a href="index.html">Orrialde Nagusia</a></li>
                 <li><a href="produktuak.html">Produktuak</a></li>
                 <li><a href="saskia.html">Saskia</a></li>
-                <li><a href="estatistikak.html" class="aktiboa">Estatistikak</a></li>
+                <li><a href="estatistikak.html">Estatistikak</a></li>
             </ul>
 
             <span class="material-symbols-outlined menu-botoia" id="menu-ireki">
@@ -57,43 +57,25 @@
     </dialog>
 
     <main>
-        <section class="estatistikak-sekzioa">
-            <h1>Gure Datuen Estatistikak</h1>
-            <p class="deskribapena">Hemen gure dendaren eta produktuen inguruko datu interesgarriak aurkituko dituzu.
-            </p>
-
-            <div class="estatistika-edukiontzia">
-                <div class="estatistika-txartela">
-                    <h3>Salmenta Guztiak</h3>
-                    <div class="zenbakia">1,245</div>
-                    <p>Azken hilabetean saldutako produktuak</p>
-                </div>
-
-                <div class="estatistika-txartela">
-                    <h3>Bezeroak</h3>
-                    <div class="zenbakia">850</div>
-                    <p>Erregistratutako erabiltzaile aktiboak</p>
-                </div>
-
-                <div class="estatistika-txartela">
-                    <h3>Bisitak</h3>
-                    <div class="zenbakia">15k</div>
-                    <p>Webgunearen bisitak hil honetan</p>
-                </div>
+        <div class="saioa-hasi-edukiontzia">
+            <div class="form-kutxa">
+                <h2>Saioa Hasi</h2>
+                <form action="#" method="POST">
+                    <div class="input-taldea">
+                        <label for="erabiltzailea">Erabiltzailea</label>
+                        <input type="text" id="erabiltzailea" name="erabiltzailea"
+                            placeholder="Idatzi zure erabiltzailea" required>
+                    </div>
+                    <div class="input-taldea">
+                        <label for="pasahitza">Pasahitza</label>
+                        <input type="password" id="pasahitza" name="pasahitza" placeholder="Idatzi zure pasahitza"
+                            required>
+                    </div>
+                    <button type="submit" class="bidali-botoia">Sartu</button>
+                    <p class="erregistratu-linka">Ez daukazu konturik? <a href="#">Erregistratu hemen</a></p>
+                </form>
             </div>
-
-            <div class="grafiko-sinplea">
-                <h3>Salmenten Bilakaera (Azken 6 hilabeteak)</h3>
-                <div class="barra-edukiontzia">
-                    <div class="barra" style="height: 40%;" title="Urtarrila: 40%"><span>Urt</span></div>
-                    <div class="barra" style="height: 55%;" title="Otsaila: 55%"><span>Ots</span></div>
-                    <div class="barra" style="height: 30%;" title="Martxoa: 30%"><span>Mar</span></div>
-                    <div class="barra" style="height: 70%;" title="Apirila: 70%"><span>Api</span></div>
-                    <div class="barra" style="height: 85%;" title="Maiatza: 85%"><span>Mai</span></div>
-                    <div class="barra" style="height: 60%;" title="Ekaina: 60%"><span>Eka</span></div>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
 
     <script src="js/main.js"></script>

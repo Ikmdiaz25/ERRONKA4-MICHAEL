@@ -1,0 +1,100 @@
+.saioa-hasi-edukiontzia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background-color: #f4f4f4;
+    font-family: 'Quicksand', sans-serif;
+    padding: 20px;
+}
+
+.form-kutxa {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.form-kutxa h2 {
+    color: #294936;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.input-taldea {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-taldea label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+.input-taldea input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    box-sizing: border-box;
+    /* Ensures padding doesn't affect width */
+    font-size: 1rem;
+}
+
+.input-taldea input:focus {
+    border-color: #a6a867;
+    outline: none;
+    box-shadow: 0 0 5px rgba(166, 168, 103, 0.5);
+}
+
+.bidali-botoia {
+    width: 100%;
+    padding: 12px;
+    background-color: #a50104;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.bidali-botoia:hover {
+    background-color: #800000;
+}
+
+.erregistratu-linka {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.erregistratu-linka a {
+    color: #294936;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.erregistratu-linka a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .form-kutxa {
+        padding: 30px 20px;
+    }
+
+    .form-kutxa h2 {
+        font-size: 1.8rem;
+    }
+}
