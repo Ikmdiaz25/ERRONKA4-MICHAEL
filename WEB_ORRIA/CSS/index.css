@@ -270,20 +270,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .carousel-overlay h2,
-    .section-header h2,
-    .cta-content h2 {
-        font-size: 2.2rem;
-    }
 
-    .carousel-overlay {
-        width: 85%;
-        padding: 2rem;
-    }
-
-    .hero-carousel {
-        height: 500px;
-    }
 
     .featured-section,
     .why-choose-us,
@@ -302,24 +289,6 @@
         grid-template-columns: 1fr;
     }
 
-    .carousel-overlay h2,
-    .section-header h2,
-    .cta-content h2 {
-        font-size: 1.5rem;
-    }
-
-    .carousel-overlay p {
-        font-size: 1rem;
-    }
-
-    .hero-carousel {
-        height: 400px;
-    }
-
-    .carousel-overlay {
-        width: 90%;
-        padding: 1rem;
-    }
 
     .nav-btn {
         padding: 0.5rem;

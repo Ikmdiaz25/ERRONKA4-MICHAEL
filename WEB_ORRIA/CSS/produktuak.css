@@ -39,7 +39,8 @@ body {
 
 /* Botoi aktiboa (hautatuta dagoena) */
 .iragazki-botoia.aktiboa {
-    background-color: #e63946; /* Kolore gorria */
+    background-color: #e63946;
+    /* Kolore gorria */
     color: white;
 }
 
@@ -47,7 +48,7 @@ body {
 .produktu-sarea {
     display: grid;
     /* Automatikoki zutabeak sortu (Responsive) */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
 
@@ -55,7 +56,7 @@ body {
 .produktu-txartela {
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
     padding-bottom: 15px;
@@ -63,7 +64,8 @@ body {
 }
 
 .produktu-txartela:hover {
-    transform: scale(1.02); /* Handitu pixka bat sagua pasatzean */
+    transform: scale(1.02);
+    /* Handitu pixka bat sagua pasatzean */
 }
 
 .produktu-irudia {
@@ -84,6 +86,7 @@ body {
     font-weight: bold;
     font-size: 1.2rem;
 }
+
 /* --- OROKORRA --- */
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -98,14 +101,16 @@ body {
     max-width: 1300px;
     margin: 40px auto;
     padding: 0 20px;
-    gap: 40px; /* Tartea barra eta produktuen artean */
+    gap: 40px;
+    /* Tartea barra eta produktuen artean */
     align-items: flex-start;
 }
 
 /* --- ALBOKO BARRA (Ezkerra) --- */
 .alboko-barra {
     width: 250px;
-    flex-shrink: 0; /* Ez txikitu */
+    flex-shrink: 0;
+    /* Ez txikitu */
     background: transparent;
 }
 
@@ -196,7 +201,7 @@ body {
 
 .produktu-txartela:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .produktu-txartela img {
@@ -230,7 +235,8 @@ body {
 }
 
 .prezioa {
-    color: #E72D31; /* Gorria */
+    color: #E72D31;
+    /* Gorria */
     font-weight: bold;
     font-size: 16px;
     margin: 0;
@@ -249,7 +255,10 @@ body {
     align-items: center;
 }
 
-.izarra { color: #FFC107; margin-right: 3px; }
+.izarra {
+    color: #FFC107;
+    margin-right: 3px;
+}
 
 /* Tailak (S M L XL) */
 .tailak {
@@ -269,7 +278,7 @@ body {
 /* Erosi Botoia */
 .produktu-txartela button {
     width: 100%;
-    background-color: #E72D31;
+    background-color: #294936;
     color: white;
     border: none;
     padding: 10px;
@@ -280,5 +289,5 @@ body {
 }
 
 .produktu-txartela button:hover {
-    background-color: #c42327;
+    background-color: #1A2F23;
 }
