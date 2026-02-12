@@ -3,19 +3,22 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-sclae=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="IndiUsurbileko Saski orri funtzioanala">
     <meta name="author" content="MUPI Taldea">
     <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu,close">
+    <link rel="stylesheet" href="CSS/saskia.css">
 
     <script src="js/saskiaZerbitzua.js" defer></script>
     <script src="js/saskia.js" defer></script>
     <script src="js/main.js" defer></script>
+
 </head>
 
 <body>
@@ -30,16 +33,18 @@
                 <li><a href="produktuak.html">Produktuak</a></li>
                 <li><a href="saskia.html">Saskia</a></li>
                 <li><a href="estadistikak.html">Estadistikak</a></li>
-                <li><a href="login.html">Login</a></li>
+
 
             </ul>
 
             <span class="material-symbols-outlined menu-botoia" id="menu-ireki">
                 menu
             </span>
-
-            <div class="carritoLogo">
-                <a href="saskia.html"><img src="IMG/carro.png" alt="Saskia"><span id="zenbaketa">0</span></a>
+            <div class="nav-right">
+                <button class="loginBtn"><a href="login.html">Login</a></button>
+                <div class="carritoLogo">
+                    <a href="saskia.html"><img src="IMG/carro.png" alt="Saskia"><span id="zenbaketa">0</span></a>
+                </div>
             </div>
         </nav>
     </header>
@@ -59,8 +64,8 @@
     <main>
         <section id="produktuak">
         </section>
-        <p id="karritoa_hutsik">Karritoa hutsik dago,<a href="./produktuak.html">aukeratu erosi nahi dituzun
-                produktuak</a>
+        <p id="karritoa_hutsik">Ups! Badirudi ez duzula ezer erosi. <a href="./produktuak.html">Klikatu hemen
+                produktuak ikusteko</a>
         </p>
         <section id="cart-container">
         </section>
@@ -72,8 +77,44 @@
         </section>
     </main>
     <footer>
+        <div id="footer1">
+            <div class="footer-column">
+                <h3>Laguntza</h3>
+                <ul>
+                    <li><a href="tel:926492739">Tel: 926492739</a></li>
+                    <li><a href="https://wa.me/926492739">Whatsapp</a></li>
+                    <li><a href="mailto:info@indiusurbil.com">Kontaktua</a></li>
+                </ul>
+            </div>
 
+            <div class="footer-column">
+                <h3>Informazioa</h3>
+                <ul>
+                    <li><a href="#">Pribazitate politika</a></li>
+                    <li><a href="#">Cookie politika</a></li>
+                    <li><a href="#">Termino eta kondizioak</a></li>
+                </ul>
+            </div>
 
+            <div class="footer-column">
+                <h3>Aurkitu Gaitzazu</h3>
+                <ul>
+                    <li>IndiUsurbil</li>
+                    <li>Kale Nagusia 12</li>
+                    <li>20170 Usurbil</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="footer2">
+            <p>&copy; 2025 IndiUsurbil - Eskubide guztiak erreserbatuta.</p>
+            <div class="saresozialak">
+                <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="img/linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
     </footer>
 </body>
 

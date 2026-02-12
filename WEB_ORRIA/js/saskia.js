@@ -19,22 +19,17 @@ function sortuProduktuak() {
         produktuak.forEach(produktu => {
             const txartela = document.createElement("div");
             txartela.classList.add("saskia-produktua");
-            txartela.style.border = "1px solid #ddd";
-            txartela.style.padding = "10px";
-            txartela.style.marginBottom = "10px";
-            txartela.style.display = "flex";
-            txartela.style.justifyContent = "space-between";
-            txartela.style.alignItems = "center";
+
 
             txartela.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <img src="${produktu.img}" alt="${produktu.productName}" style="width: 50px; height: 50px; object-fit: cover;">
-                    <div>
+                <div class="produktu-info">
+                    <img src="${produktu.img}" alt="${produktu.productName}" class="produktu-img">
+                    <div class="produktu-xehetasunak">
                         <h3>${produktu.productName}</h3>
                         <p>Prezioa: $${produktu.price}</p>
                     </div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 10px;">
+                <div class="produktu-akzioak">
                     <button class="kendu-btn">-</button>
                     <span>${produktu.kantitatea}</span>
                     <button class="gehitu-btn">+</button>
