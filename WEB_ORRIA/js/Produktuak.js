@@ -254,19 +254,19 @@ const displayProducts = (productsToShow) => {
 
 
 
-  products.forEach(products => {
+  productsToShow.forEach(product => {
     const div = document.createElement("div");
     div.className = 'produktu-txartela';
 
     div.innerHTML = `
-      <img src="${products.image}" alt="${products.title}" onerror="this.src='https://via.placeholder.com/150'"> 
-      <h3>${products.title}</h3>
+      <img src="${product.image}" alt="${product.title}" onerror="this.src='https://via.placeholder.com/150'"> 
+      <h3>${product.title}</h3>
       <div class="txartel-xehetasunak">
           <div class="prezio-kaxa">
-             <p class="prezioa">$ ${products.price}</p>
+             <p class="prezioa">$ ${product.price}</p>
           </div>
           <div class="balorazioa">
-             <span class="izarra">★</span>${products.rating.rate}
+             <span class="izarra">★</span>${product.rating.rate}
           </div>
       </div>
       <div class="tailak">
@@ -286,3 +286,6 @@ const displayProducts = (productsToShow) => {
     shopContent.append(div);
   });
 };
+
+// Hasieratu produktuak bistaratzen
+displayProducts(products);
