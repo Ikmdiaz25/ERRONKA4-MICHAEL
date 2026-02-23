@@ -23,9 +23,9 @@ function sortuProduktuak() {
 
             txartela.innerHTML = `
                 <div class="produktu-info">
-                    <img src="${produktu.img}" alt="${produktu.productName}" class="produktu-img">
+                    <img src="${produktu.image}" alt="${produktu.title}" class="produktu-img">
                     <div class="produktu-xehetasunak">
-                        <h3>${produktu.productName}</h3>
+                        <h3>${produktu.title}</h3>
                         <p>Prezioa: $${produktu.price}</p>
                     </div>
                 </div>
