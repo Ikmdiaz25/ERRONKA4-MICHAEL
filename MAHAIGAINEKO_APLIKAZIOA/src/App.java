@@ -21,20 +21,42 @@ public class App {
         switch (aukera) {
             case 1:
 
+                // Hemen sartuko da produktua gehitzen den kodea
+                // Hau da ProduktuakGehitu(); metodo antzeko bat da
+
+                ProduktuakGehitu gehitu = new ProduktuakGehitu();
+                gehitu.produktuaGehitu(sc);
+
                 break;
             case 2:
+
+                // Hemen sartuko da CSV fitxategia igoen den kodea
+                // Hau da CSVigo(); metodo antzeko bat da
 
                 break;
             case 3:
 
+                // Hemen sartuko da produktua eguneratzen den kodea
+                // Hau da ProduktuakEguneratu(); metodo antzeko bat da
+                // Hemen ere egongo dira produktuak ezabatzeko eta informazioa exportazteko
+                // aukerak.
+
                 break;
             case 4:
+
+                // Hemen sartuko da produktuak zerrendatzen den kodea
+                // Hau da ProduktuakZerrendatu(); metodo antzeko bat da
 
                 break;
             case 5:
 
+                // Hemen sartuko da produktuak bilatzen den kodea
+                // Hau da ProduktuakBilatu(); metodo antzeko bat da
+
                 break;
             case 6:
+
+                // Hemen sartuko da aplikazioa itxi den kodea
 
                 break;
             default:
