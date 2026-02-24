@@ -24,7 +24,8 @@ public class App {
                 // Hemen sartuko da produktua gehitzen den kodea
                 // Hau da ProduktuakGehitu(); metodo antzeko bat da
 
-                ProduktuakGehitu gehitu = new ProduktuakGehitu();
+                ProduktuakKudeatu gehitu = new ProduktuakKudeatu();
+
                 gehitu.produktuaGehitu(sc);
 
                 break;
@@ -38,14 +39,15 @@ public class App {
 
                 // Hemen sartuko da produktua eguneratzen den kodea
                 // Hau da ProduktuakEguneratu(); metodo antzeko bat da
-                // Hemen ere egongo dira produktuak ezabatzeko eta informazioa exportazteko
-                // aukerak.
 
                 break;
             case 4:
+                // Hemen sartuko da produktua ezabatzen den kodea
+                // Hau da ProduktuakEzabatu(); metodo antzeko bat da
 
-                // Hemen sartuko da produktuak zerrendatzen den kodea
-                // Hau da ProduktuakZerrendatu(); metodo antzeko bat da
+                ProduktuakKudeatu ezabatu = new ProduktuakKudeatu();
+
+                ezabatu.produktuakEzabatu();
 
                 break;
             case 5:
@@ -53,12 +55,30 @@ public class App {
                 // Hemen sartuko da produktuak bilatzen den kodea
                 // Hau da ProduktuakBilatu(); metodo antzeko bat da
 
+                ProduktuakKudeatu bilatu = new ProduktuakKudeatu();
+
+                bilatu.ProduktuakBilatu();
+
                 break;
             case 6:
+
+                // Hemen sartuko da informazioa exportatzen den kodea
+                // Hau da ProduktuakExportatu(); metodo antzeko bat da
+
+                break;
+
+            case 7:
+
+                // Hemen sartuko da produktuak zerrendatzen den kodea
+                // Hau da ProduktuakZerrendatu(); metodo antzeko bat da
+
+                break;
+            case 8:
 
                 // Hemen sartuko da aplikazioa itxi den kodea
 
                 break;
+
             default:
                 System.out.println("Aukera baliogabea");
                 break;
