@@ -2,6 +2,7 @@
     "liveServer.settings.port": 5501,
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "MAHAIGAINEKO_APLIKAZIOA/lib/mysql-connector-j-9.6.0.jar"
+        "MAHAIGAINEKO_APLIKAZIOA/lib/mysql-connector-j-9.6.0.jar",
+        "MAHAIGAINEKO_APLIKAZIOA/lib/gson-2.10.1.jar"
     ]
 }
