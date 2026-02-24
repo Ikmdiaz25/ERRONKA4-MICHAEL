@@ -10,7 +10,8 @@ public class ProduktuakKudeatu {
     public static final Scanner sc = new Scanner(System.in);
 
     /*-----------PRODUKTUAK GEHITZEKO FUNTZIOA----------- */
-    public void produktuaGehitu(Scanner sc) {
+
+    public static void produktuaGehitu() {
 
         /* Produktuaren informazioa sartu, datu guztiak. */
 
@@ -75,7 +76,7 @@ public class ProduktuakKudeatu {
 
     /*-----------PRODUKTUAK BILATZEKO FUNTZIOA------------ */
 
-    public void ProduktuakBilatu() {
+    public static void ProduktuakBilatu() {
 
         /* Produktuak bilatzeako menua */
         System.out.println("-----PRODUKTUAK BILATU-----");
@@ -136,7 +137,7 @@ public class ProduktuakKudeatu {
 
     /*-----------PRODUKTUAK EZABATZEKO FUNTZIOA------------- */
 
-    public void produktuakEzabatu() {
+    public static void produktuakEzabatu() {
 
         System.out.println("Sartu ezabatu nahi den produktuaren kodea:");
 
@@ -159,7 +160,7 @@ public class ProduktuakKudeatu {
     }
 
     /*-----------PRODUKTUAK EGUNERATZEKO FUNTZIOA----------- */
-    public void produktuakEguneratu() {
+    public static void produktuakEguneratu() {
         try {
             System.out.println("\n----- PRODUKTUA BERRITU -----");
             System.out.print("Sartu eguneratu nahi den produktuaren kodea (Prod_kod): ");
@@ -264,7 +265,7 @@ public class ProduktuakKudeatu {
     }
 
     /*-----------PRODUKTUAK ZERRENDATZEKO FUNTZIOA----------- */
-    public void produktuakZerrendatu() {
+    public static void produktuakZerrendatu() {
 
         try {
 

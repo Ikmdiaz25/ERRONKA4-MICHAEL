@@ -24,9 +24,7 @@ public class App {
                 // Hemen sartuko da produktua gehitzen den kodea
                 // Hau da ProduktuakGehitu(); metodo antzeko bat da
 
-                ProduktuakKudeatu gehitu = new ProduktuakKudeatu();
-
-                gehitu.produktuaGehitu(sc);
+                ProduktuakKudeatu.produktuaGehitu();
 
                 break;
             case 2:
@@ -34,24 +32,22 @@ public class App {
                 // Hemen sartuko da CSV fitxategia igoen den kodea
                 // Hau da CSVigo(); metodo antzeko bat da
 
+                CSVFitxategia.csvIgo();
+
                 break;
             case 3:
 
                 // Hemen sartuko da produktua eguneratzen den kodea
                 // Hau da ProduktuakEguneratu(); metodo antzeko bat da
 
-                ProduktuakKudeatu eguneratu = new ProduktuakKudeatu();
-
-                eguneratu.produktuakEguneratu();
+                ProduktuakKudeatu.produktuakEguneratu();
 
                 break;
             case 4:
                 // Hemen sartuko da produktua ezabatzen den kodea
                 // Hau da ProduktuakEzabatu(); metodo antzeko bat da
 
-                ProduktuakKudeatu ezabatu = new ProduktuakKudeatu();
-
-                ezabatu.produktuakEzabatu();
+                ProduktuakKudeatu.produktuakEzabatu();
 
                 break;
             case 5:
@@ -59,9 +55,7 @@ public class App {
                 // Hemen sartuko da produktuak bilatzen den kodea
                 // Hau da ProduktuakBilatu(); metodo antzeko bat da
 
-                ProduktuakKudeatu bilatu = new ProduktuakKudeatu();
-
-                bilatu.ProduktuakBilatu();
+                ProduktuakKudeatu.ProduktuakBilatu();
 
                 break;
             case 6:
@@ -75,6 +69,8 @@ public class App {
 
                 // Hemen sartuko da produktuak zerrendatzen den kodea
                 // Hau da ProduktuakZerrendatu(); metodo antzeko bat da
+
+                ProduktuakKudeatu.produktuakZerrendatu();
 
                 break;
             case 8:
