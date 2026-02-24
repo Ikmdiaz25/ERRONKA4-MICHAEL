@@ -40,6 +40,10 @@ public class App {
                 // Hemen sartuko da produktua eguneratzen den kodea
                 // Hau da ProduktuakEguneratu(); metodo antzeko bat da
 
+                ProduktuakKudeatu eguneratu = new ProduktuakKudeatu();
+
+                eguneratu.produktuakEguneratu();
+
                 break;
             case 4:
                 // Hemen sartuko da produktua ezabatzen den kodea

@@ -250,4 +250,111 @@ public class ProduktuakKudeatu {
         }
 
     }
+
+    /*-----------PRODUKTUAK ZERRENDATZEKO FUNTZIOA----------- */
+    public void produktuakZerrendatu() {
+
+        try {
+
+            System.out.println("----PRODUKTUAK ZERRENDATU-----");
+
+            System.out.println("Nola ikusi nahi dituzu produktuak?");
+            System.out.println("1. Kategoriaren arabera");
+            System.out.println("2. Produktu guztiak");
+
+            int aukera1 = sc.nextInt();
+
+            sc.nextLine();
+
+            /*
+             * Kategoria kodea hasieratzen dut eta gero, where eta orderBy bi aldagaiak
+             * sortzen ditut, izan ere, SQL kontsultaren arabera aldatuko dira.
+             * Horrela, ez dut hainbat SQL kontsulta idatzi beharrik izango
+             */
+
+            int kategKod = 0;
+            String where = "";
+            String orderBy = "";
+            String sql = "";
+
+            /* KATEGORIAREN ARABERA AUKERATZEN BADU */
+
+            if (aukera1 == 1) {
+
+                System.out.println("Sartu kategoriaren kodea");
+                kategKod = sc.nextInt();
+                sc.nextLine();
+                where = "WHERE Kateg_kod= ?";
+
+            }
+
+            /*------------------ */
+            System.out.println("\nNola ordenatu nahi dituzu emaitzak?");
+            System.out.println("1. Prezioaren arabera (Merkeenetik garestienera)");
+            System.out.println("2. Stockaren arabera (Gutxienetik gehienera)");
+            System.out.print("Aukeratu zenbaki bat: ");
+
+            int ordena = sc.nextInt();
+            sc.nextLine();
+
+            /* PREZIOAREN ARABERA AUKERATZEN BADU */
+
+            if (ordena == 1) {
+                orderBy = " ORDER BY Prod_Prezioa ASC";
+            }
+            /* STOCKAREN ARABERA AUKERATZEN BADU */
+            else if (ordena == 2) {
+                orderBy = " ORDER BY Prod_Stock ASC";
+
+            }
+            /* AUKERA OKERRA */
+            else {
+                System.out.println("Aukera okerra. Berezko ordenan erakutsiko dira.");
+            }
+
+            /*
+             * Orduan hemengo sql aldagaian, aukeraren arabera, WHERE eta ORDER BY egongo
+             * dira. Adibidez, 1 eta 1 aukeratuz gero, sql aldagaian
+             * "SELECT * FROM produktuak WHERE Kateg_kod= ? ORDER BY Prod_Prezioa ASC"
+             * egongo da
+             */
+
+            sql = "SELECT * FROM produktuak" + where + orderBy;
+
+            /*
+             * Datu basearekin konexioa sortzen dut eta ondoren, prepared statement bat
+             * sortzen dut
+             */
+
+            Connection con = DatuBaseConex.conectar();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+
+            if (aukera1 == 1) {
+                pstmt.setInt(1, kategKod);
+            }
+
+            ResultSet rs = pstmt.executeQuery();
+
+            System.out.println("\n--- PRODUKTUEN ZERRENDA ---");
+            boolean badaude = false;
+
+            while (rs.next()) {
+                badaude = true;
+                System.out.println("Kodea: " + rs.getInt("Prod_kod") +
+                        " | Izena: " + rs.getString("Prod_Izena") +
+                        " | Prezioa: " + rs.getDouble("Prod_Prezioa") + "€" +
+                        " | Stock: " + rs.getInt("Prod_Stock") +
+                        " | Kategoria: " + rs.getInt("Kateg_kod"));
+            }
+
+            if (!badaude) {
+                System.out.println("Ez da produkturik aurkitu irizpide horiekin.");
+            }
+
+        } catch (SQLException e) {
+            System.err.println("SQL Errorea produktuak zerrendatzean");
+
+        }
+    }
+
 }
