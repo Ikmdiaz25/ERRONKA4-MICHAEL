@@ -6,6 +6,9 @@ public class CSVFitxategia {
 
     public static void csvIgo() {
 
+        System.out.println("ATENCIÓN: Java está buscando los archivos en esta carpeta exacta: ");
+        System.out.println(new java.io.File(".").getAbsolutePath());
+
         Scanner sc = new Scanner(System.in);
         System.out.println("\n----- CSV FITXATEGIA IGO -----");
         System.out.print("Sartu CSV fitxategiaren izena edo bidea (adibidez: produktuak.csv): ");
