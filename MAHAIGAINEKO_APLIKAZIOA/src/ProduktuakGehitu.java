@@ -8,7 +8,9 @@ public class ProduktuakGehitu {
     public void produktuaGehitu(Scanner sc) {
 
         System.out.println("Sartu produktuaren kodea");
-        String prodKodea = sc.nextLine();
+        int prodKodea = sc.nextInt();
+
+        sc.nextLine();
 
         System.out.println("Sartu produktuaren izena");
         String prodIzena = sc.nextLine();
@@ -19,11 +21,15 @@ public class ProduktuakGehitu {
         System.out.println("Sartu produktuaren prezioa");
         double prodPrezioa = sc.nextDouble();
 
+        sc.nextLine();
+
         System.out.println("Sartu produktuaren sorkuntza data");
         String prodSorkuntzaData = sc.nextLine();
 
         System.out.println("Sartu produktuaren stocka");
         int prodStock = sc.nextInt();
+
+        sc.nextLine();
 
         System.out.println("Sartu produktuaren kategoria");
         String prodKategoria = sc.nextLine();
@@ -31,19 +37,19 @@ public class ProduktuakGehitu {
         System.out.println("Sartu produktuaren irudia");
         String prodIrudia = sc.nextLine();
 
-        String sql = "INSERT INTO produktuak (Prod_kod, Prod_izena, Prod_Deskribapena, Prod_Prezioa, Prod_Stock, Kateg_kod, Prod_Irudia, Prod_SorkuntzaData) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO produktuak (Prod_kod, Prod_Izena, Prod_Deskribapena, Prod_Prezioa, Prod_SorkuntzaData, Prod_Stock, Prod_Irudia, Kateg_kod) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection con = DatuBaseConex.conectar();
                 PreparedStatement pstmt = con.prepareStatement(sql)) {
 
-            pstmt.setString(1, prodKodea);
+            pstmt.setInt(1, prodKodea);
             pstmt.setString(2, prodIzena);
             pstmt.setString(3, prodDeskribapena);
             pstmt.setDouble(4, prodPrezioa);
-            pstmt.setInt(5, prodStock);
-            pstmt.setString(6, prodKategoria);
+            pstmt.setString(5, prodSorkuntzaData);
+            pstmt.setInt(6, prodStock);
             pstmt.setString(7, prodIrudia);
-            pstmt.setString(8, prodSorkuntzaData);
+            pstmt.setString(8, prodKategoria);
 
             int filas = pstmt.executeUpdate();
             if (filas > 0) {
