@@ -9,7 +9,7 @@ public class ProduktuakKudeatu {
 
     public static final Scanner sc = new Scanner(System.in);
 
-    /*----PRODUKTUAK GEHITZEKO FUNTZIOA */
+    /*-----------PRODUKTUAK GEHITZEKO FUNTZIOA----------- */
     public void produktuaGehitu(Scanner sc) {
 
         /* Produktuaren informazioa sartu, datu guztiak. */
@@ -73,7 +73,7 @@ public class ProduktuakKudeatu {
 
     }
 
-    /*----PRODUKTUAK BILATZEKO FUNTZIOA */
+    /*-----------PRODUKTUAK BILATZEKO FUNTZIOA------------ */
 
     public void ProduktuakBilatu() {
 
@@ -134,6 +134,8 @@ public class ProduktuakKudeatu {
 
     }
 
+    /*-----------PRODUKTUAK EZABATZEKO FUNTZIOA------------- */
+
     public void produktuakEzabatu() {
 
         System.out.println("Sartu ezabatu nahi den produktuaren kodea:");
@@ -156,4 +158,96 @@ public class ProduktuakKudeatu {
 
     }
 
+    /*-----------PRODUKTUAK EGUNERATZEKO FUNTZIOA----------- */
+    public void produktuakEguneratu() {
+        try {
+            System.out.println("\n----- PRODUKTUA BERRITU -----");
+            System.out.print("Sartu eguneratu nahi den produktuaren kodea (Prod_kod): ");
+            int kodea = sc.nextInt();
+            sc.nextLine();
+
+            System.out.println("\nZer aldatu nahi duzu?");
+            System.out.println("1. Izena");
+            System.out.println("2. Deskribapena");
+            System.out.println("3. Prezioa");
+            System.out.println("4. Stocka");
+            System.out.println("5. Kategoria kodea");
+            System.out.println("6. Irudiaren URLa");
+            System.out.print("Aukeratu zenbaki bat: ");
+
+            int aukera = sc.nextInt();
+            sc.nextLine();
+
+            String sql = "";
+            PreparedStatement pstmt = null;
+            Connection con = DatuBaseConex.conectar();
+
+            switch (aukera) {
+                case 1:
+                    System.out.print("Sartu izen berria: ");
+                    String izenBerria = sc.nextLine();
+                    sql = "UPDATE produktuak SET Prod_Izena = ? WHERE Prod_kod = ?";
+                    pstmt = con.prepareStatement(sql);
+                    pstmt.setString(1, izenBerria);
+                    break;
+                case 2:
+                    System.out.print("Sartu deskribapen berria: ");
+                    String deskBerria = sc.nextLine();
+                    sql = "UPDATE produktuak SET Prod_Deskribapena = ? WHERE Prod_kod = ?";
+                    pstmt = con.prepareStatement(sql);
+                    pstmt.setString(1, deskBerria);
+                    break;
+                case 3:
+                    System.out.print("Sartu prezio berria: ");
+                    double prezioBerria = sc.nextDouble();
+                    sql = "UPDATE produktuak SET Prod_Prezioa = ? WHERE Prod_kod = ?";
+                    pstmt = con.prepareStatement(sql);
+                    pstmt.setDouble(1, prezioBerria);
+                    break;
+                case 4:
+                    System.out.print("Sartu stock berria: ");
+                    int stockBerria = sc.nextInt();
+                    sql = "UPDATE produktuak SET Prod_Stock = ? WHERE Prod_kod = ?";
+                    pstmt = con.prepareStatement(sql);
+                    pstmt.setInt(1, stockBerria);
+                    break;
+                case 5:
+                    System.out.print("Sartu kategoria kode berria: ");
+                    String kategBerria = sc.nextLine();
+                    sql = "UPDATE produktuak SET Kateg_kod = ? WHERE Prod_kod = ?";
+                    pstmt = con.prepareStatement(sql);
+                    pstmt.setString(1, kategBerria);
+                    break;
+                case 6:
+                    System.out.print("Sartu irudiaren URL berria: ");
+                    String irudiBerria = sc.nextLine();
+                    sql = "UPDATE produktuak SET Prod_Irudia = ? WHERE Prod_kod = ?";
+                    pstmt = con.prepareStatement(sql);
+                    pstmt.setString(1, irudiBerria);
+                    break;
+                default:
+                    System.out.println("Aukera okerra.");
+                    con.close();
+                    return;
+            }
+
+            pstmt.setInt(2, kodea);
+
+            int eragindakoLerroak = pstmt.executeUpdate();
+
+            if (eragindakoLerroak > 0) {
+                System.out.println("Produktua ondo eguneratu da!");
+            } else {
+                System.out.println("Ez da produkturik aurkitu kode horrekin.");
+            }
+
+            pstmt.close();
+            con.close();
+
+        } catch (SQLException e) {
+            System.err.println("SQL Errorea produktua eguneratzean.");
+
+        }
+
+    }
 }
