@@ -178,9 +178,14 @@ public class ProduktuakKudeatu {
             int aukera = sc.nextInt();
             sc.nextLine();
 
+            /* Sql, prepared statement eta konekzioa sortuko dira */
             String sql = "";
             PreparedStatement pstmt = null;
             Connection con = DatuBaseConex.conectar();
+
+            /*
+             * Bezeroak aldatu nahi duen datuaren arabera, SQL kontsulta aldatuko da
+             */
 
             switch (aukera) {
                 case 1:
@@ -231,9 +236,16 @@ public class ProduktuakKudeatu {
                     return;
             }
 
+            /* Aurretik aukeratutako produktuaren kodea statementean sartuko da. */
+
             pstmt.setInt(2, kodea);
 
             int eragindakoLerroak = pstmt.executeUpdate();
+
+            /*
+             * Egiaztatu ea produktua ondo eguneratu den, hau da, lerrorik ez bada aldatzen,
+             * orduan ez da agindua ondo exekutatu
+             */
 
             if (eragindakoLerroak > 0) {
                 System.out.println("Produktua ondo eguneratu da!");
@@ -329,12 +341,24 @@ public class ProduktuakKudeatu {
             Connection con = DatuBaseConex.conectar();
             PreparedStatement pstmt = con.prepareStatement(sql);
 
+            /*
+             * Kategoriaren arabera aukeratzen badu, zer kategoriaren kodea jakin beharko da
+             * eta beraz aurreko pausuan kategoriaren kodea eskatzen denenan, bezeroak
+             * jarritako kodea zenbakia statementean sartuko da, "?" multzoa betetzeko.
+             */
+
             if (aukera1 == 1) {
                 pstmt.setInt(1, kategKod);
             }
 
+            /*
+             * Azkenean, prepared statementa exekutatzen dut eta emaitzak result set-ean
+             * gordetzen ditut
+             */
+
             ResultSet rs = pstmt.executeQuery();
 
+            /* Produktuak erakusten dira */
             System.out.println("\n--- PRODUKTUEN ZERRENDA ---");
             boolean badaude = false;
 
@@ -346,6 +370,11 @@ public class ProduktuakKudeatu {
                         " | Stock: " + rs.getInt("Prod_Stock") +
                         " | Kategoria: " + rs.getInt("Kateg_kod"));
             }
+
+            /*
+             * Azkenean, "badaude" boolean aldagaiari esker, ez bada produkturik aurkitu,
+             * mezu bat erakutsiko da
+             */
 
             if (!badaude) {
                 System.out.println("Ez da produkturik aurkitu irizpide horiekin.");
