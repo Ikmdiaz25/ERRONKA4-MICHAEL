@@ -24,8 +24,7 @@ public class App {
                 // Hemen sartuko da produktua gehitzen den kodea
                 // Hau da ProduktuakGehitu(); metodo antzeko bat da
 
-                ProduktuakGehitu gehitu = new ProduktuakGehitu();
-                gehitu.produktuaGehitu(sc);
+                ProduktuakKudeatu.produktuaGehitu();
 
                 break;
             case 2:
@@ -33,19 +32,20 @@ public class App {
                 // Hemen sartuko da CSV fitxategia igoen den kodea
                 // Hau da CSVigo(); metodo antzeko bat da
 
+                CSVFitxategia.csvIgo();
+
                 break;
             case 3:
 
                 // Hemen sartuko da produktua eguneratzen den kodea
                 // Hau da ProduktuakEguneratu(); metodo antzeko bat da
-                // Hemen ere egongo dira produktuak ezabatzeko eta informazioa exportazteko
-                // aukerak.
+
+                ProduktuakKudeatu.produktuakEguneratu();
 
                 break;
             case 4:
 
-                // Hemen sartuko da produktuak zerrendatzen den kodea
-                // Hau da ProduktuakZerrendatu(); metodo antzeko bat da
+                ProduktuakKudeatu.produktuakEzabatu();
 
                 break;
             case 5:
@@ -53,8 +53,25 @@ public class App {
                 // Hemen sartuko da produktuak bilatzen den kodea
                 // Hau da ProduktuakBilatu(); metodo antzeko bat da
 
+                ProduktuakKudeatu.ProduktuakBilatu();
+
                 break;
             case 6:
+
+                // Hemen sartuko da informazioa exportatzen den kodea
+                // Hau da ProduktuakExportatu(); metodo antzeko bat da
+
+                break;
+
+            case 7:
+
+                // Hemen sartuko da produktuak zerrendatzen den kodea
+                // Hau da ProduktuakZerrendatu(); metodo antzeko bat da
+
+                ProduktuakKudeatu.produktuakZerrendatu();
+
+                break;
+            case 8:
 
                 // Hemen sartuko da aplikazioa itxi den kodea
 
