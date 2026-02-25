@@ -1,5 +1,105 @@
 [
   {
+    "kodea": 101,
+    "izena": "Kamiseta Kotoizkoa",
+    "deskribapena": "Eguneroko erabilerarako kamiseta erosoa",
+    "prezioa": 12.5,
+    "stock": 120,
+    "sokuntzaData": "2025-02-25",
+    "irudia": "kamiseta_zuria.png",
+    "kategoria_Kod": 1
+  },
+  {
+    "kodea": 102,
+    "izena": "Kamiseta Grafikoa",
+    "deskribapena": "Diseinu esklusiboa duen kamiseta beltza",
+    "prezioa": 18.99,
+    "stock": 80,
+    "sokuntzaData": "2025-02-25",
+    "irudia": "kamiseta_grafikoa.png",
+    "kategoria_Kod": 1
+  },
+  {
+    "kodea": 103,
+    "izena": "Alkandora Formala",
+    "deskribapena": "Alkandora zuria ekitaldi berezietarako",
+    "prezioa": 34.5,
+    "stock": 50,
+    "sokuntzaData": "2025-02-25",
+    "irudia": "alkandora_zuria.png",
+    "kategoria_Kod": 2
+  },
+  {
+    "kodea": 104,
+    "izena": "Flanelazko Alkandora",
+    "deskribapena": "Neguko egunetarako alkandora laukiduna epelekoa",
+    "prezioa": 28.0,
+    "stock": 65,
+    "sokuntzaData": "2025-02-25",
+    "irudia": "alkandora_flanela.png",
+    "kategoria_Kod": 2
+  },
+  {
+    "kodea": 105,
+    "izena": "Sudadera Txanoduna",
+    "deskribapena": "Txanoa eta patrikekin hornitutako sudadera grisa",
+    "prezioa": 42.0,
+    "stock": 90,
+    "sokuntzaData": "2025-02-25",
+    "irudia": "sudadera_grisa.png",
+    "kategoria_Kod": 3
+  },
+  {
+    "kodea": 106,
+    "izena": "Kirol Sudadera",
+    "deskribapena": "Malgua eta transpiragarria den kirol sudadera",
+    "prezioa": 38.5,
+    "stock": 75,
+    "sokuntzaData": "2025-02-25",
+    "irudia": "sudadera_kirola.png",
+    "kategoria_Kod": 3
+  },
+  {
+    "kodea": 107,
+    "izena": "Bakero Klasikoak",
+    "deskribapena": "Eguneroko erabilerarako praka urdin ohikoak",
+    "prezioa": 49.95,
+    "stock": 110,
+    "sokuntzaData": "2025-02-25",
+    "irudia": "bakero_urdinak.png",
+    "kategoria_Kod": 4
+  },
+  {
+    "kodea": 108,
+    "izena": "Txandal Prakak",
+    "deskribapena": "Kotoizko txandal praka erosoak",
+    "prezioa": 24.99,
+    "stock": 140,
+    "sokuntzaData": "2025-02-25",
+    "irudia": "txandal_prakak.png",
+    "kategoria_Kod": 4
+  },
+  {
+    "kodea": 109,
+    "izena": "Jaka Iragazgaitza",
+    "deskribapena": "Euriari aurre egiteko finko eta arina den jaka",
+    "prezioa": 75.0,
+    "stock": 40,
+    "sokuntzaData": "2025-02-25",
+    "irudia": "jaka_iragazgaitza.png",
+    "kategoria_Kod": 5
+  },
+  {
+    "kodea": 110,
+    "izena": "Artilezko Jaka",
+    "deskribapena": "Negurako ezin hobea estiloz janzteko",
+    "prezioa": 89.5,
+    "stock": 30,
+    "sokuntzaData": "2025-02-25",
+    "irudia": "jaka_artilea.png",
+    "kategoria_Kod": 5
+  },
+  {
     "kodea": 201,
     "izena": "Sudadera Gris",
     "deskribapena": "Sudadera con capucha 100% algodon",
@@ -48,15 +148,5 @@
     "sokuntzaData": "2024-05-17",
     "irudia": "chaqueta_cuero.png",
     "kategoria_Kod": 4
-  },
-  {
-    "kodea": 206,
-    "izena": "Gorra Ajustable",
-    "deskribapena": "Gorra con logo bordado",
-    "prezioa": 15.0,
-    "stock": 50,
-    "sokuntzaData": "2024-05-17",
-    "irudia": "gorra_logo.png",
-    "kategoria_Kod": 5
   }
 ]

@@ -20,8 +20,18 @@
     "kategoria_Kod": 0
   },
   {
-    "kodea": 201,
-    "izena": "Sudadera Gris",
+    "kodea": 110,
+    "izena": "Artilezko Jaka",
+    "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "prezioa": 0.0,
+    "stock": 30,
+    "sokuntzaData": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "irudia": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "kategoria_Kod": 0
+  },
+  {
+    "kodea": 109,
+    "izena": "Jaka Iragazgaitza",
     "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
     "prezioa": 0.0,
     "stock": 40,
@@ -30,21 +40,11 @@
     "kategoria_Kod": 0
   },
   {
-    "kodea": 206,
-    "izena": "Gorra Ajustable",
+    "kodea": 201,
+    "izena": "Sudadera Gris",
     "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
     "prezioa": 0.0,
-    "stock": 50,
-    "sokuntzaData": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
-    "irudia": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
-    "kategoria_Kod": 0
-  },
-  {
-    "kodea": 202,
-    "izena": "Pantalon Vaquero",
-    "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
-    "prezioa": 0.0,
-    "stock": 60,
+    "stock": 40,
     "sokuntzaData": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
     "irudia": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
     "kategoria_Kod": 0
