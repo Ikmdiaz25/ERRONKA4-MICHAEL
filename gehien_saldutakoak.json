@@ -1,0 +1,47 @@
+[
+  {
+    "kodea": 205,
+    "izena": "Chaqueta de Cuero",
+    "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "prezioa": 0.0,
+    "stock": 15,
+    "sokuntzaData": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "irudia": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5"
+  },
+  {
+    "kodea": 204,
+    "izena": "Zapatillas Deportivas",
+    "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "prezioa": 0.0,
+    "stock": 25,
+    "sokuntzaData": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "irudia": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5"
+  },
+  {
+    "kodea": 201,
+    "izena": "Sudadera Gris",
+    "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "prezioa": 0.0,
+    "stock": 40,
+    "sokuntzaData": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "irudia": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5"
+  },
+  {
+    "kodea": 206,
+    "izena": "Gorra Ajustable",
+    "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "prezioa": 0.0,
+    "stock": 50,
+    "sokuntzaData": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "irudia": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5"
+  },
+  {
+    "kodea": 202,
+    "izena": "Pantalon Vaquero",
+    "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "prezioa": 0.0,
+    "stock": 60,
+    "sokuntzaData": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "irudia": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5"
+  }
+]

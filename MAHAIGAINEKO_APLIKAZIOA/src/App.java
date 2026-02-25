@@ -9,9 +9,11 @@ public class App {
         System.out.println("1. Produktuak gehitu");
         System.out.println("2. CSV fitxategia igo");
         System.out.println("3. Produktuak eguneratu");
-        System.out.println("4. Produktuak zerrendatu");
+        System.out.println("4. Produktuak ezabatu");
         System.out.println("5. Produktuak bilatu");
-        System.out.println("6. Irten");
+        System.out.println("6. Informazioa exportatu");
+        System.out.println("7. Produktuak zerrendatu");
+        System.out.println("8. Irten");
 
         // Aurreko menuaren aukera gordetzeko
         Scanner sc = new Scanner(System.in);
@@ -62,6 +64,9 @@ public class App {
 
                 // Hemen sartuko da informazioa exportatzen den kodea
                 // Hau da ProduktuakExportatu(); metodo antzeko bat da
+
+                JSONExportatu jsonExportatu = new JSONExportatu();
+                jsonExportatu.esportatuDatuak();
 
                 break;
 

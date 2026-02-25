@@ -1,0 +1,56 @@
+[
+  {
+    "kodea": 201,
+    "izena": "Sudadera Gris",
+    "deskribapena": "Sudadera con capucha 100% algodon",
+    "prezioa": 35.99,
+    "stock": 40,
+    "sokuntzaData": "2024-05-15",
+    "irudia": "sudadera_gris.png"
+  },
+  {
+    "kodea": 202,
+    "izena": "Pantalon Vaquero",
+    "deskribapena": "Vaqueros de corte recto clasico",
+    "prezioa": 45.5,
+    "stock": 60,
+    "sokuntzaData": "2024-05-15",
+    "irudia": "vaqueros_rectos.png"
+  },
+  {
+    "kodea": 203,
+    "izena": "Camiseta Blanca",
+    "deskribapena": "Camiseta basica manga corta",
+    "prezioa": 12.0,
+    "stock": 100,
+    "sokuntzaData": "2024-05-16",
+    "irudia": "camiseta_blanca.png"
+  },
+  {
+    "kodea": 204,
+    "izena": "Zapatillas Deportivas",
+    "deskribapena": "Zapatillas para correr color negro",
+    "prezioa": 59.9,
+    "stock": 25,
+    "sokuntzaData": "2024-05-16",
+    "irudia": "zapatillas_negras.png"
+  },
+  {
+    "kodea": 205,
+    "izena": "Chaqueta de Cuero",
+    "deskribapena": "Chaqueta estilo motero sintetica",
+    "prezioa": 89.95,
+    "stock": 15,
+    "sokuntzaData": "2024-05-17",
+    "irudia": "chaqueta_cuero.png"
+  },
+  {
+    "kodea": 206,
+    "izena": "Gorra Ajustable",
+    "deskribapena": "Gorra con logo bordado",
+    "prezioa": 15.0,
+    "stock": 50,
+    "sokuntzaData": "2024-05-17",
+    "irudia": "gorra_logo.png"
+  }
+]
