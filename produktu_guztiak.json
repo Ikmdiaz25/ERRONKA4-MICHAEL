@@ -130,16 +130,6 @@
     "kategoria_Kod": 1
   },
   {
-    "kodea": 204,
-    "izena": "Zapatillas Deportivas",
-    "deskribapena": "Zapatillas para correr color negro",
-    "prezioa": 59.9,
-    "stock": 25,
-    "sokuntzaData": "2024-05-16",
-    "irudia": "zapatillas_negras.png",
-    "kategoria_Kod": 3
-  },
-  {
     "kodea": 205,
     "izena": "Chaqueta de Cuero",
     "deskribapena": "Chaqueta estilo motero sintetica",
