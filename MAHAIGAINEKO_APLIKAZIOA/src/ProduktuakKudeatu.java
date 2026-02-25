@@ -119,16 +119,16 @@ public class ProduktuakKudeatu {
             System.out.println("----EMAITZAK----");
 
             while (rs.next()) {
-                System.out.println("ID: " + rs.getInt("id") +
-                        " | Izena: " + rs.getString("izena") +
-                        " | Deskribapena: " + rs.getString("deskribapena") +
-                        " | Prezioa: " + rs.getDouble("prezioa") + "€" +
-                        " | Stock: " + rs.getInt("stock"));
+                System.out.println("ID: " + rs.getInt("Prod_kod") +
+                        " | Izena: " + rs.getString("Prod_izena") +
+                        " | Deskribapena: " + rs.getString("Prod_deskribapena") +
+                        " | Prezioa: " + rs.getDouble("Prod_prezioa") + "€" +
+                        " | Stock: " + rs.getInt("Prod_stock"));
 
             }
 
         } catch (SQLException e) {
-            System.out.println("Errorea produktua bilatzean");
+            System.out.println("Errorea produktua bilatzean:" + e.getMessage());
         }
 
     }
@@ -152,7 +152,7 @@ public class ProduktuakKudeatu {
             System.out.println("Ezabatu da!");
 
         } catch (SQLException e) {
-            System.out.println("Errorea produktua ezabatzean");
+            System.out.println("Errorea produktua ezabatzean:" + e.getMessage());
         }
 
     }
@@ -256,7 +256,7 @@ public class ProduktuakKudeatu {
             con.close();
 
         } catch (SQLException e) {
-            System.err.println("SQL Errorea produktua eguneratzean.");
+            System.err.println("SQL Errorea produktua eguneratzean." + e.getMessage());
 
         }
 
@@ -295,7 +295,7 @@ public class ProduktuakKudeatu {
                 System.out.println("Sartu kategoriaren kodea");
                 kategKod = sc.nextInt();
                 sc.nextLine();
-                where = "WHERE Kateg_kod= ?";
+                where = " WHERE Kateg_kod= ?";
 
             }
 
@@ -311,11 +311,11 @@ public class ProduktuakKudeatu {
             /* PREZIOAREN ARABERA AUKERATZEN BADU */
 
             if (ordena == 1) {
-                orderBy = " ORDER BY Prod_Prezioa ASC";
+                orderBy = " ORDER BY Prod_Prezioa ASC;";
             }
             /* STOCKAREN ARABERA AUKERATZEN BADU */
             else if (ordena == 2) {
-                orderBy = " ORDER BY Prod_Stock ASC";
+                orderBy = " ORDER BY Prod_Stock ASC;";
 
             }
             /* AUKERA OKERRA */
@@ -380,7 +380,7 @@ public class ProduktuakKudeatu {
             }
 
         } catch (SQLException e) {
-            System.err.println("SQL Errorea produktuak zerrendatzean");
+            System.err.println("SQL Errorea produktuak zerrendatzean" + e.getMessage());
 
         }
     }
