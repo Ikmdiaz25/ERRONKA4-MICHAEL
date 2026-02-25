@@ -81,6 +81,8 @@ public class App {
             case 8:
 
                 // Hemen sartuko da aplikazioa itxi den kodea
+                System.out.println("Aplikazioa itxi da. Agur!");
+                System.exit(0);
 
                 break;
 

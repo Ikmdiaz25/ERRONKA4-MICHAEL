@@ -14,12 +14,12 @@
 
     <!--Google fonts-tik kopitutakoa, hanburgesa menua ikusteko---->
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu">
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu,close">
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -75,10 +75,19 @@
         <section id="cart-container">
         </section>
         <section id="totala">
-            <p>Produktu kantitate totala: <span id="kantitatea">0</span></p>
-            <p>Prezio totala: $<span id="prezioa">0</span></p>
-            <button id="erosiBtn" disabled>Erosi</button>
-            <button id="berrezarri">Berrezarri</button>
+            <h3>Laburpena</h3>
+            <div class="totala-lerroa">
+                <p>Produktu kantitate totala:</p>
+                <span id="kantitatea">0</span>
+            </div>
+            <div class="totala-lerroa">
+                <p>Prezio totala: </p>
+                <span>$<span id="prezioa">0</span></span>
+            </div>
+            <div class="botoi-taldea">
+                <button id="erosiBtn" disabled>Erosi</button>
+                <button id="berrezarri">Berrezarri</button>
+            </div>
         </section>
     </main>
     <footer>
@@ -121,6 +130,8 @@
             </div>
         </div>
     </footer>
+    <script src="js/saskiaZerbitzua.js"></script>
+    <script src="js/saskia.js"></script>
 </body>
 
 </html>

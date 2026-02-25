@@ -67,44 +67,95 @@
 }
 
 #totala {
-    max-width: 800px;
+    max-width: 400px;
     margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    text-align: right;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
 }
 
-#totala p {
-    font-size: 1.2rem;
-    margin: 10px 0;
+#totala h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.totala-lerroa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.totala-lerroa p {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #444;
+}
+
+.totala-lerroa span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+#totala .botoi-taldea {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 #erosiBtn,
 #berrezarri {
-    padding: 10px 20px;
-    margin-left: 10px;
+    padding: 12px 20px;
+    margin: 0;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
     font-family: inherit;
+    width: 100%;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
 #erosiBtn {
     background-color: #294936;
     color: white;
+    box-shadow: 0 4px 6px rgba(41, 73, 54, 0.2);
+}
+
+#erosiBtn:hover {
+    background-color: #1e3628;
+    transform: translateY(-2px);
 }
 
 #erosiBtn:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
 }
 
 #berrezarri {
     background-color: #a50104;
     color: white;
+    box-shadow: 0 4px 6px rgba(165, 1, 4, 0.2);
+}
+
+#berrezarri:hover {
+    background-color: #850103;
+    transform: translateY(-2px);
 }
 
 #karritoa_hutsik {
