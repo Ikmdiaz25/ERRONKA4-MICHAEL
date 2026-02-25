@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/produktuak.css">
     <link rel="stylesheet" href="CSS/footer.css">
-    <link rel="stylesheet" href="CSS/estatistikak.css">
+    <link rel="stylesheet" href="CSS/estadistikak.css">
 
     <!--Google fonts-tik kopitutakoa, hanburgesa menua ikusteko---->
     <link rel="stylesheet"
@@ -35,7 +35,7 @@
                 <li><a href="index.html">Orrialde Nagusia</a></li>
                 <li><a href="produktuak.html">Produktuak</a></li>
                 <li><a href="saskia.html">Saskia</a></li>
-                <li><a href="estatistikak.html" class="aktiboa">Estatistikak</a></li>
+                <li><a href="estadistikak.html" class="aktiboa">Estadistikak</a></li>
             </ul>
 
             <span class="material-symbols-outlined menu-botoia" id="menu-ireki">
@@ -57,35 +57,82 @@
                 <li><a href="index.html">Orrialde Nagusia</a></li>
                 <li><a href="produktuak.html">Produktuak</a></li>
                 <li><a href="saskia.html">Saskia</a></li>
-                <li><a href="estatistikak.html">Estatistikak</a></li>
+                <li><a href="estadistikak.html">Estadistikak</a></li>
 
             </ul>
         </div>
     </dialog>
 
     <main>
-        <section class="estatistikak-sekzioa">
-            <h1>Gure Datuen Estatistikak</h1>
+        <section class="estadistikak-sekzioa">
+            <h1>Gure Datuen Estadistikak</h1>
             <p class="deskribapena">Hemen gure dendaren eta produktuen inguruko datu interesgarriak aurkituko dituzu.
             </p>
 
+            <!-- Goiko txartel nagusiak (Datu errealekin saiatuko direnak) -->
             <div class="estatistika-edukiontzia">
-                <div class="estatistika-txartela">
-                    <h3>Produktu kopuru totala</h3>
-                    <div class="zenbakia">1,245</div>
-                    <p>Gure dendan aurkitu ditzakezun produktuak</p>
+                <div class="estatistika-txartela azpimarragarria">
+                    <h3>Irabazi Guztizkoak</h3>
+                    <div class="zenbakia" id="irabaziakTotala">0.00 €</div>
+                    <p>Egindako eskaera guztien batura historikoa</p>
                 </div>
 
-                <div class="estatistika-txartela">
-                    <h3>Bezeroak</h3>
-                    <div class="zenbakia">850</div>
-                    <p>Erregistratutako erabiltzaile aktiboak</p>
+                <div class="estatistika-txartela azpimarragarria">
+                    <h3>Gehien Erositako Produktua</h3>
+                    <div class="zenbakia testu-txikiagoa" id="produktuIzarra">-</div>
+                    <p id="produktuIzarraKopuru">0 salmenta</p>
+                </div>
+            </div>
+
+            <!-- Beheko grid-a beste datuekin -->
+            <div class="estatistika-grid">
+                <!-- Sasi-datuak dituzten panelak -->
+                <div class="grid-txartela">
+                    <h4>Stock Baxua Duten Produktuak</h4>
+                    <ul class="datu-zerrenda">
+                        <li><strong>Chaqueta de Cuero</strong> (15 unitate)</li>
+                        <li><strong>Zapatillas Deportivas</strong> (25 unitate)</li>
+                    </ul>
+                    <p class="oharra">* Muga: 30 unitate</p>
                 </div>
 
-                <div class="estatistika-txartela">
-                    <h3>Bisitak</h3>
-                    <div class="zenbakia">15k</div>
-                    <p>Webgunearen bisitak hil honetan</p>
+                <div class="grid-txartela">
+                    <h4>Top Bezeroak (Eskaera Kopuruaz)</h4>
+                    <ul class="datu-zerrenda">
+                        <li>1. Ane Garcia (12 eskaera)</li>
+                        <li>2. Mikel Lopez (9 eskaera)</li>
+                        <li>3. Jon Perez (7 eskaera)</li>
+                    </ul>
+                </div>
+
+                <div class="grid-txartela">
+                    <h4>Inoiz Erosi Ez Direnak</h4>
+                    <ul class="datu-zerrenda">
+                        <li>Sudadera Berdea V2</li>
+                        <li>Txano Lodia Urdina</li>
+                    </ul>
+                </div>
+
+                <div class="grid-txartela">
+                    <h4>+500€ Sortu Duten Produktuak</h4>
+                    <ul class="datu-zerrenda">
+                        <li>Pantalon Vaquero (546.00 €)</li>
+                        <li>Chaqueta de Cuero (809.55 €)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Grafiko simulatuaren atala -->
+            <div class="grafiko-sinplea">
+                <h3>Hileko Irabaziak (2025)</h3>
+                <div class="barra-edukiontzia">
+                    <div class="barra" style="height: 30%;" title="Urtarrila: 320€"><span>Urt</span></div>
+                    <div class="barra" style="height: 45%;" title="Otsaila: 450€"><span>Ots</span></div>
+                    <div class="barra" style="height: 80%;" title="Martxoa: 800€"><span>Mar</span></div>
+                    <div class="barra" style="height: 60%;" title="Apirila: 600€"><span>Api</span></div>
+                    <div class="barra" style="height: 95%;" title="Maiatza: 950€"><span>Mai</span></div>
+                    <div class="barra" style="height: 40%;" title="Ekaina: 400€"><span>Eka</span></div>
+                    <div class="barra" style="height: 70%;" title="Uztaila: 700€"><span>Uzt</span></div>
                 </div>
             </div>
 
@@ -93,6 +140,7 @@
     </main>
 
     <script src="js/main.js"></script>
+    <script src="js/estadistikak.js"></script>
     <footer>
         <div id="footer1">
             <div class="footer-column">

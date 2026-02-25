@@ -79,6 +79,29 @@ berrezarriBtn.addEventListener('click', () => {
 
 if (erosiBtn) {
     erosiBtn.addEventListener('click', () => {
+        const produktuak = JSON.parse(localStorage.getItem(keyLocalStorage));
+        if (produktuak && produktuak.length > 0) {
+            // Irabazi guztizkoak eguneratu
+            const unekoIrabaziak = produktuak.reduce((acc, curr) => acc + (curr.prezioa * curr.kantitatea), 0);
+            const irabaziZaharrak = parseFloat(localStorage.getItem('totalEarnings')) || 0;
+            localStorage.setItem('totalEarnings', (irabaziZaharrak + unekoIrabaziak).toFixed(2));
+
+            // Gehien erositako produktuak gorde
+            let soldProducts = JSON.parse(localStorage.getItem('soldProducts')) || {};
+            produktuak.forEach(prod => {
+                if (soldProducts[prod.kodea]) {
+                    soldProducts[prod.kodea].kantitatea += prod.kantitatea;
+                } else {
+                    soldProducts[prod.kodea] = {
+                        izena: prod.izena,
+                        kantitatea: prod.kantitatea,
+                        prezioa: prod.prezioa
+                    };
+                }
+            });
+            localStorage.setItem('soldProducts', JSON.stringify(soldProducts));
+        }
+
         alert("Erosketa ondo burutu da! Eskerrik asko.");
         karritoaHustu();
         sortuProduktuak();
