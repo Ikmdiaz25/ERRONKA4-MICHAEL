@@ -23,10 +23,10 @@ function sortuProduktuak() {
 
             txartela.innerHTML = `
                 <div class="produktu-info">
-                    <img src="${produktu.image}" alt="${produktu.title}" class="produktu-img">
+                    <img src="IMG/${produktu.irudia}" alt="${produktu.izena}" class="produktu-img">
                     <div class="produktu-xehetasunak">
-                        <h3>${produktu.title}</h3>
-                        <p>Prezioa: $${produktu.price}</p>
+                        <h3>${produktu.izena}</h3>
+                        <p>Prezioa: $${produktu.prezioa}</p>
                     </div>
                 </div>
                 <div class="produktu-akzioak">
@@ -66,7 +66,7 @@ function sortuProduktuak() {
 
 function eguneratuTotalak(produktuak) {
     const kantitatea = produktuak.reduce((acc, curr) => acc + curr.kantitatea, 0);
-    const prezioa = produktuak.reduce((acc, curr) => acc + (curr.price * curr.kantitatea), 0);
+    const prezioa = produktuak.reduce((acc, curr) => acc + (curr.prezioa * curr.kantitatea), 0);
 
     kantitateaElement.innerText = kantitatea;
     prezioaElement.innerText = prezioa.toFixed(2);

@@ -6,7 +6,8 @@
     "prezioa": 35.99,
     "stock": 40,
     "sokuntzaData": "2024-05-15",
-    "irudia": "sudadera_gris.png"
+    "irudia": "sudadera_gris.png",
+    "kategoria_Kod": 1
   },
   {
     "kodea": 202,
@@ -15,7 +16,8 @@
     "prezioa": 45.5,
     "stock": 60,
     "sokuntzaData": "2024-05-15",
-    "irudia": "vaqueros_rectos.png"
+    "irudia": "vaqueros_rectos.png",
+    "kategoria_Kod": 2
   },
   {
     "kodea": 203,
@@ -24,7 +26,8 @@
     "prezioa": 12.0,
     "stock": 100,
     "sokuntzaData": "2024-05-16",
-    "irudia": "camiseta_blanca.png"
+    "irudia": "camiseta_blanca.png",
+    "kategoria_Kod": 1
   },
   {
     "kodea": 204,
@@ -33,7 +36,8 @@
     "prezioa": 59.9,
     "stock": 25,
     "sokuntzaData": "2024-05-16",
-    "irudia": "zapatillas_negras.png"
+    "irudia": "zapatillas_negras.png",
+    "kategoria_Kod": 3
   },
   {
     "kodea": 205,
@@ -42,7 +46,8 @@
     "prezioa": 89.95,
     "stock": 15,
     "sokuntzaData": "2024-05-17",
-    "irudia": "chaqueta_cuero.png"
+    "irudia": "chaqueta_cuero.png",
+    "kategoria_Kod": 4
   },
   {
     "kodea": 206,
@@ -51,6 +56,7 @@
     "prezioa": 15.0,
     "stock": 50,
     "sokuntzaData": "2024-05-17",
-    "irudia": "gorra_logo.png"
+    "irudia": "gorra_logo.png",
+    "kategoria_Kod": 5
   }
 ]

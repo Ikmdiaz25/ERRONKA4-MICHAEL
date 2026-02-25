@@ -23,4 +23,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
         });
     }
+
+    // Login Formularioa
+    const loginForm = document.querySelector('.saioa-hasi-edukiontzia form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const erabiltzailea = document.getElementById('erabiltzailea').value;
+            localStorage.setItem('usuarioActivo', erabiltzailea);
+
+            alert('Ongi etorri, ' + erabiltzailea + '!');
+            window.location.href = 'index.html';
+        });
+    }
+
+
+    const usuarioActivo = localStorage.getItem('usuarioActivo');
+    if (usuarioActivo) {
+        const loginBtns = document.querySelectorAll('.loginBtn');
+        loginBtns.forEach(btn => {
+            const enlace = btn.querySelector('a');
+            if (enlace) {
+                enlace.textContent = usuarioActivo;
+                enlace.href = '#';
+            } else {
+                btn.textContent = usuarioActivo;
+            }
+        });
+    }
 });

@@ -6,9 +6,10 @@ public class produktuak {
     private int stock;
     private String sokuntzaData;
     private String irudia;
+    private int kategoria_Kod;
 
     public produktuak(int kodea, String izena, String deskribapena, double prezioa, int stock, String sokuntzaData,
-            String irudia) {
+            String irudia, int kategoria_Kod) {
         this.kodea = kodea;
         this.izena = izena;
         this.deskribapena = deskribapena;
@@ -16,6 +17,15 @@ public class produktuak {
         this.stock = stock;
         this.sokuntzaData = sokuntzaData;
         this.irudia = irudia;
+        this.kategoria_Kod = kategoria_Kod;
+    }
+
+    public int getKategoria_Kod() {
+        return kategoria_Kod;
+    }
+
+    public void setKategoria_Kod(int kategoria_Kod) {
+        this.kategoria_Kod = kategoria_Kod;
     }
 
     public String getSorkuntzaData() {

@@ -14,7 +14,7 @@ function karritoraGehitu(produktu) {
         localStorage.setItem(keyLocalStorage, JSON.stringify([produktuBerria]));
         azkenKantitatea = 1;
     } else {
-        const produktuIndizea = memoria.findIndex(arropa => arropa.id === produktu.id);
+        const produktuIndizea = memoria.findIndex(arropa => arropa.kodea === produktu.kodea);
         const memoriaBerria = memoria;
 
         if (produktuIndizea === -1) {
@@ -37,7 +37,7 @@ function karritoariKendu(produktu) {
     if (!memoria) return console.warn("ERROREA: Ez da karritoa aurkitu.");
 
     let azkenKantitatea = 0;
-    const produktuIndizea = memoria.findIndex(arropa => arropa.id === produktu.id);
+    const produktuIndizea = memoria.findIndex(arropa => arropa.kodea === produktu.kodea);
 
     if (produktuIndizea !== -1) {
         let memoriaBerria = memoria;

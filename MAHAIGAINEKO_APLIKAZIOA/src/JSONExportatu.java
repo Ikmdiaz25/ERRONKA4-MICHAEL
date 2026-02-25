@@ -35,7 +35,7 @@ public class JSONExportatu {
                 /*
                  * Objetuaren instantzia sortu eta datuak sartu
                  */
-                produktuak p = new produktuak(0, sql, sql, 0, 0, sql, sql);
+                produktuak p = new produktuak(0, sql, sql, 0, 0, sql, sql, 0);
 
                 /* Datuak sartu setters erabiliz */
                 p.setKod(rs.getInt("Prod_kod"));
@@ -45,6 +45,7 @@ public class JSONExportatu {
                 p.setStock(rs.getInt("Prod_Stock"));
                 p.setSorkuntzaData(rs.getString("Prod_SorkuntzaData"));
                 p.setIrudia(rs.getString("Prod_Irudia"));
+                p.setKategoria_Kod(rs.getInt("Kateg_Kod"));
 
                 /* Objetua listari gehitzen diogu */
                 produktuZerrenda.add(p);
@@ -97,7 +98,7 @@ public class JSONExportatu {
 
             while (rs.next()) {
                 /* Objetu bat sortzen dugu, oraingoan datu batzuk besterik ez ditugu behar */
-                produktuak p = new produktuak(0, sql, sql, 0, 0, sql, sql);
+                produktuak p = new produktuak(0, sql, sql, 0, 0, sql, sql, 0);
                 p.setKod(rs.getInt("Prod_kod"));
                 p.setIzena(rs.getString("Prod_Izena"));
                 p.setStock(rs.getInt("Prod_Stock"));
