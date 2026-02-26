@@ -57,7 +57,7 @@ public class App {
                 // Hemen sartuko da produktuak bilatzen den kodea
                 // Hau da ProduktuakBilatu(); metodo antzeko bat da
 
-                ProduktuakKudeatu.ProduktuakBilatu();
+                ProduktuakKudeatu.produktuakBilatu();
 
                 break;
             case 6:
