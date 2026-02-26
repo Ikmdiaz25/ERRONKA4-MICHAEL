@@ -1,11 +1,2 @@
 Prod_kod,Izena,Deskribapena,Prezioa,Data,Stock,Irudia,Kategoria
-101,Kamiseta Kotoizkoa,Eguneroko erabilerarako kamiseta erosoa,12.50,2025-02-25,120,kamiseta_zuria.png,1
-102,Kamiseta Grafikoa,Diseinu esklusiboa duen kamiseta beltza,18.99,2025-02-25,80,kamiseta_grafikoa.png,1
-103,Alkandora Formala,Alkandora zuria ekitaldi berezietarako,34.50,2025-02-25,50,alkandora_zuria.png,2
-104,Flanelazko Alkandora,Neguko egunetarako alkandora laukiduna epelekoa,28.00,2025-02-25,65,alkandora_flanela.png,2
-105,Sudadera Txanoduna,Txanoa eta patrikekin hornitutako sudadera grisa,42.00,2025-02-25,90,sudadera_grisa.png,3
-106,Kirol Sudadera,Malgua eta transpiragarria den kirol sudadera,38.50,2025-02-25,75,sudadera_kirola.png,3
-107,Bakero Klasikoak,Eguneroko erabilerarako praka urdin ohikoak,49.95,2025-02-25,110,bakero_urdinak.png,4
-108,Txandal Prakak,Kotoizko txandal praka erosoak,24.99,2025-02-25,140,txandal_prakak.png,4
-109,Jaka Iragazgaitza,Euriari aurre egiteko finko eta arina den jaka,75.00,2025-02-25,40,jaka_iragazgaitza.png,5
-110,Artilezko Jaka,Negurako ezin hobea estiloz janzteko,89.50,2025-02-25,30,jaka_artilea.png,5
+222,Produktu222,Eguneroko erabilerarako kamiseta erosoa,12.50,2025-02-25,120,produktua.png,1

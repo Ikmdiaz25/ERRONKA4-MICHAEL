@@ -10,16 +10,6 @@
     "kategoria_Kod": 0
   },
   {
-    "kodea": 204,
-    "izena": "Zapatillas Deportivas",
-    "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
-    "prezioa": 0.0,
-    "stock": 25,
-    "sokuntzaData": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
-    "irudia": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
-    "kategoria_Kod": 0
-  },
-  {
     "kodea": 110,
     "izena": "Artilezko Jaka",
     "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
@@ -45,6 +35,16 @@
     "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
     "prezioa": 0.0,
     "stock": 40,
+    "sokuntzaData": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "irudia": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "kategoria_Kod": 0
+  },
+  {
+    "kodea": 103,
+    "izena": "Alkandora Formala",
+    "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "prezioa": 0.0,
+    "stock": 50,
     "sokuntzaData": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
     "irudia": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
     "kategoria_Kod": 0

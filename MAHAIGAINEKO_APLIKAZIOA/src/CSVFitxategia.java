@@ -6,7 +6,7 @@ public class CSVFitxategia {
 
     public static void csvIgo() {
 
-        System.out.println("ATENCIÓN: Java está buscando los archivos en esta carpeta exacta: ");
+        System.out.println("Java fitxategiak bilatzen ari da hemen: ");
         System.out.println(new java.io.File(".").getAbsolutePath());
 
         Scanner sc = new Scanner(System.in);
