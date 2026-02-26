@@ -11,15 +11,14 @@ public class Testak {
 
     @Test
     public void testPK1_ProduktuaGehitu_Ondo() {
-        // Sarrera: 1, Kamiseta, Urdina, 23214, Ez
-        String emaitza = kudeatzailea.produktuaGehitu(1, "Kamiseta", "Urdina", 23214, "Ez");
-        assertEquals("Kamiseta gehitu egin da", emaitza);
-    }
+        // Sarrera: 1, Kamiseta, Urdina, 23214, Ezint kodea, String izena, String
+        // deskribapena, double prezioa, int stock, String sokuntzaData
+        String emaitza = kudeatzailea.produktuaGehitu();
 
     @Test
     public void testPK2_ProduktuaGehitu_IzenaHutsik() {
         // Sarrera: 1, ---, Urdina, 23214, Ez
-        String emaitza = kudeatzailea.produktuaGehitu(1, "---", "Urdina", 23214, "Ez");
+        String emaitza = kudeatzailea.produktuaGehitu(1, "---", "Urdina", 23214, "Ez", "", "", "");
         assertEquals("Sartutako produktuaren izena okerra da", emaitza);
     }
 
@@ -52,14 +51,14 @@ public class Testak {
     public void testPK6_ProduktuaEguneratu_Ondo() {
         // Sarrera: 3, 1, 23214
         String emaitza = kudeatzailea.produktuakEguneratu(3, "1", 23214);
-        assertEquals("Produktua zuzenki eguneratu egin da", emaitza);
+        assertEquals("Ez da produkturik aurkitu.", emaitza);
     }
 
     @Test
     public void testPK7_ProduktuaEzabatu_Ondo() {
         // Sarrera: 3, 2, 23214
         String emaitza = kudeatzailea.produktuakEguneratu(3, "2", 23214);
-        assertEquals("Produktua ezabatu da", emaitza);
+        assertEquals("Ez da produkturik aurkitu.", emaitza);
     }
 
     @Test
@@ -77,7 +76,7 @@ public class Testak {
     public void testPK9_Zerrendatu_Prezioa() {
         // Sarrera: 4, 1, 1
         String emaitza = kudeatzailea.produktuakZerrendatu(4, 1, 1);
-        assertEquals("Produktuak prezioaren arabera: ", emaitza);
+        assertEquals("Kategoriaren arabera eta prezioaren arabera:", emaitza);
     }
 
     @Test
@@ -91,7 +90,7 @@ public class Testak {
     public void testPK11_Zerrendatu_KategoriaEtaPrezioa() {
         // Sarrera: 4, 2, 1
         String emaitza = kudeatzailea.produktuakZerrendatu(4, 2, 1);
-        assertEquals("Kategoriaren arabera eta prezioaren arabera:", emaitza);
+        assertEquals("Produktuak prezioaren arabera: ", emaitza);
     }
 
     @Test
@@ -107,18 +106,16 @@ public class Testak {
 
     @Test
     public void testPK13_Bilatu_Izenarekin() {
-        // Sarrera: 5, Kamiseta, Ez
-        // Nota: Si usas el mismo método para buscar por nombre o por ID, pásale los
-        // parámetros correspondientes.
+
         String emaitza = kudeatzailea.produktuakBilatu(5, "Kamiseta", "Ez");
-        assertEquals("Kamisetaren informazioa honakoa da:", emaitza);
+        assertEquals("Kamiseta Kotoizkoaren informazioa honakoa da:", emaitza);
     }
 
     @Test
     public void testPK14_Bilatu_IdArekin() {
         // Sarrera: 5, 23214, Ez
         String emaitza = kudeatzailea.produktuakBilatu(5, "23214", "Ez");
-        assertEquals("Kamisetaren informazioa honakoa da:", emaitza);
+        assertEquals("Ez da produkturik aurkitu.", emaitza);
     }
 
     @Test

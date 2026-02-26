@@ -10,8 +10,12 @@ public class ProduktuakKudeatu {
     /*-----------PRODUKTUAK GEHITZEKO FUNTZIOA----------- */
 
     public static void produktuaGehitu() {
+
+        /* Produktuaren informazioa sartu, datu guztiak. */
+
         System.out.println("Sartu produktuaren kodea");
         int prodKodea = sc.nextInt();
+
         sc.nextLine();
 
         System.out.println("Sartu produktuaren izena");
@@ -22,6 +26,7 @@ public class ProduktuakKudeatu {
 
         System.out.println("Sartu produktuaren prezioa");
         double prodPrezioa = sc.nextDouble();
+
         sc.nextLine();
 
         System.out.println("Sartu produktuaren sorkuntza data");
@@ -29,6 +34,7 @@ public class ProduktuakKudeatu {
 
         System.out.println("Sartu produktuaren stocka");
         int prodStock = sc.nextInt();
+
         sc.nextLine();
 
         System.out.println("Sartu produktuaren kategoria");
@@ -37,91 +43,94 @@ public class ProduktuakKudeatu {
         System.out.println("Sartu produktuaren irudia");
         String prodIrudia = sc.nextLine();
 
-        String emaitza = produktuaGehitu(1, prodIzena, prodDeskribapena, prodKodea, prodKategoria);
-        System.out.println(emaitza);
-    }
-
-    public static String produktuaGehitu(int menu, String izena, String deskripzioa, int id, String kategoria) {
-        if (menu < 1 || menu > 6) {
-            return "Mesedez sartu 1 eta 6 arteko zenbaki bat";
-        }
-        if (izena.equals("---")) {
-            return "Sartutako produktuaren izena okerra da";
-        }
-        if (deskripzioa.equals("---")) {
-            return "Produktuaren deskribapena sartu behar da";
-        }
-        if (id < 0) {
-            return "Produktuaren ID-a ezin da negatiboa izan";
-        }
-
+        /* Produktuaren informazioa gehitu datu-basean */
         String sql = "INSERT INTO produktuak (Prod_kod, Prod_Izena, Prod_Deskribapena, Prod_Prezioa, Prod_SorkuntzaData, Prod_Stock, Prod_Irudia, Kateg_kod) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
         try (Connection con = DatuBaseConex.conectar();
                 PreparedStatement pstmt = con.prepareStatement(sql)) {
-            pstmt.setInt(1, id);
-            pstmt.setString(2, izena);
-            pstmt.setString(3, deskripzioa);
-            pstmt.setDouble(4, 0.0);
-            pstmt.setString(5, "");
-            pstmt.setInt(6, 0);
-            pstmt.setString(7, "");
-            pstmt.setString(8, kategoria);
+
+            pstmt.setInt(1, prodKodea);
+            pstmt.setString(2, prodIzena);
+            pstmt.setString(3, prodDeskribapena);
+            pstmt.setDouble(4, prodPrezioa);
+            pstmt.setString(5, prodSorkuntzaData);
+            pstmt.setInt(6, prodStock);
+            pstmt.setString(7, prodIrudia);
+            pstmt.setString(8, prodKategoria);
 
             pstmt.executeUpdate();
-            return izena + " gehitu egin da";
-        } catch (SQLException e) {
-            return "SQL Errorea: " + e.getMessage();
+            System.out.println("Gorde da!");
+
         }
+
+        catch (SQLException e) {
+            System.err.println("SQL Errorea: " + e.getMessage());
+        } catch (InputMismatchException e) {
+            System.err.println("Errorea: Sartutako datu mota ez da zuzena (zenbakia espero zen).");
+            sc.nextLine();
+        }
+
     }
 
     /*-----------PRODUKTUAK BILATZEKO FUNTZIOA------------ */
 
-    public static void produktuakBilatu() {
+    public static void ProduktuakBilatu() {
+
+        /* Produktuak bilatzeako menua */
         System.out.println("-----PRODUKTUAK BILATU-----");
         System.out.println("1.Bilatu izenaren arabera");
         System.out.println("2.Bilatu kodearen arabera");
+
         System.out.println("Aukeratu modu bat (1 edo 2): ");
         int aukera = sc.nextInt();
         sc.nextLine();
 
-        System.out.println("Sartu bilatzeko testua:");
-        String testua = sc.nextLine();
-
-        String emaitza = produktuakBilatu(5, testua, "Ez");
-        System.out.println(emaitza);
-    }
-
-    public static String produktuakBilatu(int menu, String info, String extra) {
-        if (info.equals("-")) {
-            return "Mesedez sartu produktuaren informazioa bilaketa egiteko";
-        }
-
         String sql = "";
-        boolean isNumeric = info.chars().allMatch(Character::isDigit);
+        String bilatzailea = "";
 
-        if (isNumeric) {
-            sql = "SELECT * FROM produktuak WHERE Prod_kod = ?";
-        } else {
+        /* Bilatu produktuaren izenarekin */
+        if (aukera == 1) {
+
+            System.out.println("Sartu produktuaren izena (edo zati bat):");
+
             sql = "SELECT * FROM produktuak WHERE Prod_izena LIKE ?";
-            info = "%" + info + "%";
+
+            bilatzailea = "%" + sc.nextLine() + "%";
+
+            /* Bilatu produktuaren kodearekin */
+
+        } else if (aukera == 2) {
+
+            System.out.println("Sartu produktuaren kodea:");
+            int kodea = sc.nextInt();
+            sql = "SELECT * FROM produktuak WHERE Prod_kod = ?";
+            bilatzailea = String.valueOf(kodea);
+
         }
 
+        /* Datu basearekin konektatu eta produktuak bilatu */
         try (Connection con = DatuBaseConex.conectar();
                 PreparedStatement pstmt = con.prepareStatement(sql)) {
-            pstmt.setString(1, info);
+
+            pstmt.setString(1, bilatzailea);
+
             ResultSet rs = pstmt.executeQuery();
 
-            StringBuilder sb = new StringBuilder();
-            if (rs.next()) {
-                sb.append(rs.getString("Prod_izena")).append("ren informazioa honakoa da:");
-                // Could add more details here
-            } else {
-                return "Ez da produkturik aurkitu.";
+            System.out.println("----EMAITZAK----");
+
+            while (rs.next()) {
+                System.out.println("ID: " + rs.getInt("Prod_kod") +
+                        " | Izena: " + rs.getString("Prod_izena") +
+                        " | Deskribapena: " + rs.getString("Prod_deskribapena") +
+                        " | Prezioa: " + rs.getDouble("Prod_prezioa") + "€" +
+                        " | Stock: " + rs.getInt("Prod_stock"));
+
             }
-            return sb.toString();
+
         } catch (SQLException e) {
-            return "Errorea produktua bilatzean:" + e.getMessage();
+            System.out.println("Errorea produktua bilatzean:" + e.getMessage());
         }
+
     }
 
     /*-----------PRODUKTUAK EZABATZEKO FUNTZIOA------------- */
@@ -150,66 +159,230 @@ public class ProduktuakKudeatu {
 
     /*-----------PRODUKTUAK EGUNERATZEKO FUNTZIOA----------- */
     public static void produktuakEguneratu() {
-        System.out.print("Sartu produktuaren kodea: ");
-        int kodea = sc.nextInt();
-        sc.nextLine();
-        System.out.println("1. Eguneratu | 2. Ezabatu");
-        String aukera = sc.nextLine();
+        try {
+            System.out.println("\n----- PRODUKTUA BERRITU -----");
+            System.out.print("Sartu eguneratu nahi den produktuaren kodea (Prod_kod): ");
+            int kodea = sc.nextInt();
+            sc.nextLine();
 
-        String emaitza = produktuakEguneratu(3, aukera, kodea);
-        System.out.println(emaitza);
-    }
+            System.out.println("\nZer aldatu nahi duzu?");
+            System.out.println("1. Izena");
+            System.out.println("2. Deskribapena");
+            System.out.println("3. Prezioa");
+            System.out.println("4. Stocka");
+            System.out.println("5. Kategoria kodea");
+            System.out.println("6. Irudiaren URLa");
+            System.out.print("Aukeratu zenbaki bat: ");
 
-    public static String produktuakEguneratu(int menu, String aukera, int kodea) {
-        if (!aukera.equals("1") && !aukera.equals("2")) {
-            return "Produktua eguneratzeko aukera ez da zuzena, 1-tik 3-ra izan behar da";
-        }
+            int aukera = sc.nextInt();
+            sc.nextLine();
 
-        String sql = "";
-        if (aukera.equals("1")) {
-            sql = "UPDATE produktuak SET Prod_Stock = Prod_Stock + 1 WHERE Prod_kod = ?"; // Placeholder logic
-        } else {
-            sql = "DELETE FROM produktuak WHERE Prod_kod = ?";
-        }
+            /* Sql, prepared statement eta konekzioa sortuko dira */
+            String sql = "";
+            PreparedStatement pstmt = null;
+            Connection con = DatuBaseConex.conectar();
 
-        try (Connection con = DatuBaseConex.conectar();
-                PreparedStatement pstmt = con.prepareStatement(sql)) {
-            pstmt.setInt(1, kodea);
-            int rows = pstmt.executeUpdate();
-            if (rows > 0) {
-                return aukera.equals("1") ? "Produktua zuzenki eguneratu egin da" : "Produktua ezabatu da";
-            } else {
-                return "Ez da produkturik aurkitu.";
+            /*
+             * Bezeroak aldatu nahi duen datuaren arabera, SQL kontsulta aldatuko da
+             */
+
+            switch (aukera) {
+                case 1:
+                    System.out.print("Sartu izen berria: ");
+                    String izenBerria = sc.nextLine();
+                    sql = "UPDATE produktuak SET Prod_Izena = ? WHERE Prod_kod = ?";
+                    pstmt = con.prepareStatement(sql);
+                    pstmt.setString(1, izenBerria);
+                    break;
+                case 2:
+                    System.out.print("Sartu deskribapen berria: ");
+                    String deskBerria = sc.nextLine();
+                    sql = "UPDATE produktuak SET Prod_Deskribapena = ? WHERE Prod_kod = ?";
+                    pstmt = con.prepareStatement(sql);
+                    pstmt.setString(1, deskBerria);
+                    break;
+                case 3:
+                    System.out.print("Sartu prezio berria: ");
+                    double prezioBerria = sc.nextDouble();
+                    sql = "UPDATE produktuak SET Prod_Prezioa = ? WHERE Prod_kod = ?";
+                    pstmt = con.prepareStatement(sql);
+                    pstmt.setDouble(1, prezioBerria);
+                    break;
+                case 4:
+                    System.out.print("Sartu stock berria: ");
+                    int stockBerria = sc.nextInt();
+                    sql = "UPDATE produktuak SET Prod_Stock = ? WHERE Prod_kod = ?";
+                    pstmt = con.prepareStatement(sql);
+                    pstmt.setInt(1, stockBerria);
+                    break;
+                case 5:
+                    System.out.print("Sartu kategoria kode berria: ");
+                    String kategBerria = sc.nextLine();
+                    sql = "UPDATE produktuak SET Kateg_kod = ? WHERE Prod_kod = ?";
+                    pstmt = con.prepareStatement(sql);
+                    pstmt.setString(1, kategBerria);
+                    break;
+                case 6:
+                    System.out.print("Sartu irudiaren URL berria: ");
+                    String irudiBerria = sc.nextLine();
+                    sql = "UPDATE produktuak SET Prod_Irudia = ? WHERE Prod_kod = ?";
+                    pstmt = con.prepareStatement(sql);
+                    pstmt.setString(1, irudiBerria);
+                    break;
+                default:
+                    System.out.println("Aukera okerra.");
+                    con.close();
+                    return;
             }
+
+            /* Aurretik aukeratutako produktuaren kodea statementean sartuko da. */
+
+            pstmt.setInt(2, kodea);
+
+            int eragindakoLerroak = pstmt.executeUpdate();
+
+            /*
+             * Egiaztatu ea produktua ondo eguneratu den, hau da, lerrorik ez bada aldatzen,
+             * orduan ez da agindua ondo exekutatu
+             */
+
+            if (eragindakoLerroak > 0) {
+                System.out.println("Produktua ondo eguneratu da!");
+            } else {
+                System.out.println("Ez da produkturik aurkitu kode horrekin.");
+            }
+
+            pstmt.close();
+            con.close();
+
         } catch (SQLException e) {
-            return "Errorea: " + e.getMessage();
+            System.err.println("SQL Errorea produktua eguneratzean." + e.getMessage());
+
         }
+
     }
 
     /*-----------PRODUKTUAK ZERRENDATZEKO FUNTZIOA----------- */
     public static void produktuakZerrendatu() {
-        System.out.println("1. Kategoria | 2. Guztiak");
-        int aukera1 = sc.nextInt();
-        System.out.println("1. Prezioa | 2. Stocka");
-        int ordena = sc.nextInt();
 
-        String emaitza = produktuakZerrendatu(4, aukera1, ordena);
-        System.out.println(emaitza);
-    }
+        try {
 
-    public static String produktuakZerrendatu(int menu, int aukera1, int ordena) {
-        if (aukera1 != 1 && aukera1 != 2) {
-            return "Sartu 1 edo 2 zenbakia";
+            System.out.println("----PRODUKTUAK ZERRENDATU-----");
+
+            System.out.println("Nola ikusi nahi dituzu produktuak?");
+            System.out.println("1. Kategoriaren arabera");
+            System.out.println("2. Produktu guztiak");
+
+            int aukera1 = sc.nextInt();
+
+            sc.nextLine();
+
+            /*
+             * Kategoria kodea hasieratzen dut eta gero, where eta orderBy bi aldagaiak
+             * sortzen ditut, izan ere, SQL kontsultaren arabera aldatuko dira.
+             * Horrela, ez dut hainbat SQL kontsulta idatzi beharrik izango
+             */
+
+            int kategKod = 0;
+            String where = "";
+            String orderBy = "";
+            String sql = "";
+
+            /* KATEGORIAREN ARABERA AUKERATZEN BADU */
+
+            if (aukera1 == 1) {
+
+                System.out.println("Sartu kategoriaren kodea");
+                kategKod = sc.nextInt();
+                sc.nextLine();
+                where = " WHERE Kateg_kod= ?";
+
+            }
+
+            /*------------------ */
+            System.out.println("\nNola ordenatu nahi dituzu emaitzak?");
+            System.out.println("1. Prezioaren arabera (Merkeenetik garestienera)");
+            System.out.println("2. Stockaren arabera (Gutxienetik gehienera)");
+            System.out.print("Aukeratu zenbaki bat: ");
+
+            int ordena = sc.nextInt();
+            sc.nextLine();
+
+            /* PREZIOAREN ARABERA AUKERATZEN BADU */
+
+            if (ordena == 1) {
+                orderBy = " ORDER BY Prod_Prezioa ASC;";
+            }
+            /* STOCKAREN ARABERA AUKERATZEN BADU */
+            else if (ordena == 2) {
+                orderBy = " ORDER BY Prod_Stock ASC;";
+
+            }
+            /* AUKERA OKERRA */
+            else {
+                System.out.println("Aukera okerra. Berezko ordenan erakutsiko dira.");
+            }
+
+            /*
+             * Orduan hemengo sql aldagaian, aukeraren arabera, WHERE eta ORDER BY egongo
+             * dira. Adibidez, 1 eta 1 aukeratuz gero, sql aldagaian
+             * "SELECT * FROM produktuak WHERE Kateg_kod= ? ORDER BY Prod_Prezioa ASC"
+             * egongo da
+             */
+
+            sql = "SELECT * FROM produktuak" + where + orderBy;
+
+            /*
+             * Datu basearekin konexioa sortzen dut eta ondoren, prepared statement bat
+             * sortzen dut
+             */
+
+            Connection con = DatuBaseConex.conectar();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+
+            /*
+             * Kategoriaren arabera aukeratzen badu, zer kategoriaren kodea jakin beharko da
+             * eta beraz aurreko pausuan kategoriaren kodea eskatzen denenan, bezeroak
+             * jarritako kodea zenbakia statementean sartuko da, "?" multzoa betetzeko.
+             */
+
+            if (aukera1 == 1) {
+                pstmt.setInt(1, kategKod);
+            }
+
+            /*
+             * Azkenean, prepared statementa exekutatzen dut eta emaitzak result set-ean
+             * gordetzen ditut
+             */
+
+            ResultSet rs = pstmt.executeQuery();
+
+            /* Produktuak erakusten dira */
+            System.out.println("\n--- PRODUKTUEN ZERRENDA ---");
+            boolean badaude = false;
+
+            while (rs.next()) {
+                badaude = true;
+                System.out.println("Kodea: " + rs.getInt("Prod_kod") +
+                        " | Izena: " + rs.getString("Prod_Izena") +
+                        " | Prezioa: " + rs.getDouble("Prod_Prezioa") + "€" +
+                        " | Stock: " + rs.getInt("Prod_Stock") +
+                        " | Kategoria: " + rs.getInt("Kateg_kod"));
+            }
+
+            /*
+             * Azkenean, "badaude" boolean aldagaiari esker, ez bada produkturik aurkitu,
+             * mezu bat erakutsiko da
+             */
+
+            if (!badaude) {
+                System.out.println("Ez da produkturik aurkitu irizpide horiekin.");
+            }
+
+        } catch (SQLException e) {
+            System.err.println("SQL Errorea produktuak zerrendatzean" + e.getMessage());
+
         }
-
-        if (aukera1 == 1 && ordena == 1)
-            return "Kategoriaren arabera eta prezioaren arabera:";
-        if (ordena == 1)
-            return "Produktuak prezioaren arabera: ";
-        if (ordena == 2)
-            return "Produktuak eskuragarritasun arabera:";
-
-        return "Zerrenda:";
     }
 
 }
