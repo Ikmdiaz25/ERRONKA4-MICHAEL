@@ -1,5 +1,15 @@
 [
   {
+    "kodea": 1,
+    "izena": "Kamiseta",
+    "deskribapena": "Urdina",
+    "prezioa": 23.14,
+    "stock": 10,
+    "sokuntzaData": "2023-10-10",
+    "irudia": "irudia.jpg",
+    "kategoria_Kod": 2
+  },
+  {
     "kodea": 101,
     "izena": "Kamiseta Kotoizkoa",
     "deskribapena": "Eguneroko erabilerarako kamiseta erosoa",
@@ -138,5 +148,15 @@
     "sokuntzaData": "2024-05-17",
     "irudia": "chaqueta_cuero.png",
     "kategoria_Kod": 4
+  },
+  {
+    "kodea": 222,
+    "izena": "Produktu222",
+    "deskribapena": "Eguneroko erabilerarako kamiseta erosoa",
+    "prezioa": 12.5,
+    "stock": 120,
+    "sokuntzaData": "2025-02-25",
+    "irudia": "produktua.png",
+    "kategoria_Kod": 1
   }
 ]

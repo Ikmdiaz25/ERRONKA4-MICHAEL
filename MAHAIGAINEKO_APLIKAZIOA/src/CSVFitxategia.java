@@ -35,10 +35,7 @@ public class CSVFitxategia {
                 /*
                  * Beheko hau lehenengo lerroa (goiburua) ez sartzeko da, eta beraz ez du hori
                  * kontuan izango, bestela zenbaki bezala hartuko du eta errora emango zuen.
-                 * Niri errorea eman dit eta horregatik hau nola zuzendu bilatu izan dut. Hau
-                 * da, lehenengo lerroa ez sartzeko, eta beraz ez du hori kontuan izango,
-                 * bestela zenbaki bezala hartuko du eta errora emango zuen. Niri errorea eman
-                 * dit eta horregatik hau nola zuzendu bilatu izan dut.
+                 * Niri errorea eman dit eta horregatik hau nola zuzendu bilatu izan dut.
                  */
                 if (lerroKop == 1) {
                     continue;

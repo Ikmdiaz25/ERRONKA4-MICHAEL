@@ -1,5 +1,15 @@
 [
   {
+    "kodea": 1,
+    "izena": "Kamiseta",
+    "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "prezioa": 0.0,
+    "stock": 10,
+    "sokuntzaData": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "irudia": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
+    "kategoria_Kod": 0
+  },
+  {
     "kodea": 205,
     "izena": "Chaqueta de Cuero",
     "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
@@ -20,16 +30,6 @@
     "kategoria_Kod": 0
   },
   {
-    "kodea": 109,
-    "izena": "Jaka Iragazgaitza",
-    "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
-    "prezioa": 0.0,
-    "stock": 40,
-    "sokuntzaData": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
-    "irudia": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
-    "kategoria_Kod": 0
-  },
-  {
     "kodea": 201,
     "izena": "Sudadera Gris",
     "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
@@ -40,11 +40,11 @@
     "kategoria_Kod": 0
   },
   {
-    "kodea": 103,
-    "izena": "Alkandora Formala",
+    "kodea": 109,
+    "izena": "Jaka Iragazgaitza",
     "deskribapena": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
     "prezioa": 0.0,
-    "stock": 50,
+    "stock": 40,
     "sokuntzaData": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
     "irudia": "SELECT * FROM produktuak ORDER BY Prod_Stock ASC LIMIT 5",
     "kategoria_Kod": 0

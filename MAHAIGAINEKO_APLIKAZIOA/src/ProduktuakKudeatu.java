@@ -5,6 +5,19 @@ public class ProduktuakKudeatu {
 
     /*-----------PRODUKTUAK GEHITZEKO FUNTZIOA----------- */
 
+    /**
+     * Datu-basean produktu berri bat gehitzeko funtzioa.
+     * 
+     * @param prodKodea Produktuaren identifikatzailera (ID-a).
+     * @param prodIzena Produktuaren izena.
+     * @param prodDeskribapena Produktuaren deskribapena.
+     * @param prodPrezioa Produktuaren salmenta prezioa.
+     * @param prodSorkuntzaData Produktuaren sorkuntza edo iraungitze data.
+     * @param prodStock Produktuaren eskuragarri dagoen kantitatea.
+     * @param prodKategoria Produktuak zein kategoriari dagokion (Kategoria kodea).
+     * @param prodIrudia Produktuaren irudiaren izena edo URL-a.
+     * @return Datu-basean produktua ondo gorde den edo akatsen bat egon den zehazten duen mezu bat (String).
+     */
     public static String produktuaGehitu(int prodKodea, String prodIzena, String prodDeskribapena, double prodPrezioa,
             String prodSorkuntzaData, int prodStock, int prodKategoria, String prodIrudia) {
 
@@ -35,10 +48,18 @@ public class ProduktuakKudeatu {
         } catch (SQLException e) {
             return "SQL Errorea: " + e.getMessage();
         }
+
     }
 
     /*-----------PRODUKTUAK BILATZEKO FUNTZIOA------------ */
 
+    /**
+     * Irizpide baten arabera datu-baseko produktuak bilatzeko funtzioa.
+     * 
+     * @param aukera Bilaketa mota (1 = Izenaren arabera, 2 = Kodearen (ID) arabera).
+     * @param balioa Bilatu nahi den testua (izena edo ID-a).
+     * @return Aurkitutako produktuen informazioa daukan zerrenda (List<String>).
+     */
     public static List<String> ProduktuakBilatu(int aukera, String balioa) {
         List<String> emaitzak = new ArrayList<>();
         String sql = "";
@@ -83,6 +104,12 @@ public class ProduktuakKudeatu {
 
     /*-----------PRODUKTUAK EZABATZEKO FUNTZIOA------------- */
 
+    /**
+     * Datu-baseko produktu bat bere kodearen arabera ezabatzeko funtzioa.
+     * 
+     * @param kodea Ezabatu nahi den produktuaren identifikatzailera (ID-a).
+     * @return Ezabaketa ondo burutu den edota akatsen bat egon den mezu bat.
+     */
     public static String produktuakEzabatu(int kodea) {
         String sql = "DELETE FROM produktuak WHERE Prod_kod = ?";
 
@@ -105,6 +132,14 @@ public class ProduktuakKudeatu {
 
     /*-----------PRODUKTUAK EGUNERATZEKO FUNTZIOA----------- */
 
+    /**
+     * Lehendik dagoen produktu baten datu zehatz bat eguneratzeko (aldatzeko) funtzioa.
+     * 
+     * @param kodea Eguneratu nahi den produktuaren ID-a.
+     * @param zerAldatu Aldatu nahi den eremua (1= Izena, 2= Deskribapena, 3= Prezioa, 4= Stock, 5= Kategoria, 6= Irudia).
+     * @param balioBerriaStr Produktuaren eremuan ipini nahi den balio berria testu formatuan.
+     * @return Eguneraketa ongi joan den ala errorea egon den adierazten duen mezua.
+     */
     public static String produktuakEguneratu(int kodea, int zerAldatu, String balioBerriaStr) {
         String sql = "";
 
@@ -160,6 +195,14 @@ public class ProduktuakKudeatu {
 
     /*-----------PRODUKTUAK ZERRENDATZEKO FUNTZIOA----------- */
 
+    /**
+     * Datu-baseko produktuak zerrendatzeko funtzioa, iragazkiak eta ordenazio aukerak erabiliz.
+     * 
+     * @param aukeraKategoria Kategoriaren bidez iragazi behar den ala ez adierazten du (1 = Iragazi, Bestela = Guztiak).
+     * @param kategKod Iragazi nahi den kategoriaren kodea (aukeraKategoria = 1 denean erabilia).
+     * @param ordena Produktuak nola ordenatuko diren (1 = Prezioaren arabera, 2 = Stock-aren arabera, Bestela = Berezko ordena).
+     * @return Zehaztutako irizpideekin bat datozen produktuen zerrenda (List<String>).
+     */
     public static List<String> produktuakZerrendatu(int aukeraKategoria, int kategKod, int ordena) {
         List<String> emaitzak = new ArrayList<>();
         String where = "";
